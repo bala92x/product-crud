@@ -1,9 +1,10 @@
 {
-    "name": "laravel/laravel",
+    "name": "bala92x/product-crud",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Multi language product CRUD",
     "keywords": [
-        "framework",
+        "products",
+        "CRUD",
         "laravel"
     ],
     "license": "MIT",
