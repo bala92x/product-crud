@@ -14,6 +14,7 @@ class AddForeignKeysToProductsProductTagsTable extends Migration {
         Schema::table('products_product_tags', function (Blueprint $table) {
             $table->foreignId('product_id')->constrained();
             $table->foreignId('product_tag_id')->constrained();
+            $table->unique(['product_id', 'product_tag_id']);
         });
     }
 

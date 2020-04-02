@@ -227,6 +227,28 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-    ],
+	],
+	
+	/*
+    |--------------------------------------------------------------------------
+    | Custom configurations
+    |--------------------------------------------------------------------------
+    */
 
+	'seeder_quantity' 	=> env('SEEDER_QUANTITY', 10),
+
+	'languages'			=> [
+
+		'hu_HU'	=> [
+			'name' 			=> 'magyar',
+            'code' 			=> 'hu_HU',
+            'slug' 			=> 'hu'
+		],
+		'en_US' => [
+			'name' 			=> 'english',
+            'code' 			=> 'en_US',
+			'slug' 			=> 'en'
+		]
+
+	]
 ];
