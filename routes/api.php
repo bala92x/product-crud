@@ -14,16 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('products')->group(function () {
-    Route::get('/', function() {
-        return 'ProductFetchController@list';
-    });
-    Route::get('/{productId}', function() {
-        return 'ProductFetchController@get';
-    });
-    Route::post('/store/{productId?}', function() {
-        return 'ProductStoreController@store';
-    });
-    Route::delete('/delete/{productId}', function() {
-        return 'ProductDeleteController@get';
-    });
+    Route::get('/', 'Product\ProductFetchController@list');
+    Route::get('/{productId}', 'Product\ProductFetchController@get');
+    Route::post('/store/{productId?}', 'Product\ProductStoreController@store');
+    Route::delete('/delete/{productId}', 'Product\ProductDeleteController@delete');
 });
