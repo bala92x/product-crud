@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class Product
@@ -18,6 +19,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
  *
+ * @property HasMany $productTranslations
+ * 
  * @package App\Models
  */
 class Product extends Model {
@@ -31,4 +34,13 @@ class Product extends Model {
 		'price',
 		'image_path'
 	];
+
+    /**
+     * Get the translations of the product.
+	 * 
+	 * @return HasMany
+     */
+    public function productTranslations(): HasMany {
+        return $this->hasMany(ProductTranslation::class);
+    }
 }
