@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @property int $id
  * @property int $product_tag_id
- * @property int $language_id
+ * @property int $language_slug
  * @property string $name
  * @property string $slug
  * @property Carbon $created_at
@@ -27,7 +27,7 @@ class ProductTagTranslation extends Model {
 
     protected $fillable = [
 		'product_tag_id',
-		'language_id',
+		'language_slug',
 		'name',
 		'slug'
 	];

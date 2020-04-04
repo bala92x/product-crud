@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * Class Product
@@ -18,9 +20,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @property Carbon $deleted_at
+ * @property HasMany $product_translations
+ * @property BelongsToMany $product_tags
  *
- * @property HasMany $productTranslations
- * 
  * @package App\Models
  */
 class Product extends Model {
@@ -35,12 +37,34 @@ class Product extends Model {
 		'image_path'
 	];
 
+    protected $appends = [
+		'product_translations'
+	];
+
     /**
      * Get the translations of the product.
-	 * 
-	 * @return HasMany
+     *
+     * @return HasMany
      */
     public function productTranslations(): HasMany {
         return $this->hasMany(ProductTranslation::class);
+    }
+	
+    /**
+     * Get the product translations attribute.
+	 * 
+	 * @return Collection
+     */
+    public function getProductTranslationsAttribute(): Collection {
+        return $this->productTranslations()->get();
+    }
+
+    /**
+     * Get the tags of the product.
+	 * 
+	 * @return BelongsToMany
+     */
+    public function productTags(): BelongsToMany {
+        return $this->belongsToMany(ProductTag::class, ProductProductTag::class, 'product_id');
     }
 }

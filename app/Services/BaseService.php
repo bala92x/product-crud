@@ -49,7 +49,9 @@ class BaseService implements BaseServiceInterface {
      * @return Model
      */
     public function find(int $id): ?Model {
-        return $this->query ? $this->query->find($id) : $this->model->find($id);
+        $queryBase = $this->query ?: $this->model;
+		
+        return $queryBase->findOrFail($id);
     }
 	
     /**
@@ -70,7 +72,7 @@ class BaseService implements BaseServiceInterface {
      * @return bool
      */
     public function update(int $id, array $attributes): bool {
-        return $this->model->find($id)->update($attributes);
+        return $this->model->findOrFail($id)->update($attributes);
     }
 	
     /**
@@ -80,7 +82,7 @@ class BaseService implements BaseServiceInterface {
      * @return bool
      */
     public function delete($id): bool {
-        return $this->model->destroy($id);
+        return $this->model->findOrFail($id)->delete();
     }
 	
     /**

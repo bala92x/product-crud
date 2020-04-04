@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
 
 use App\Services\Interfaces\ProductServiceInterface;
 use App\Services\ProductService;
+use App\Http\Resources\ProductResources\ProductResource;
+use App\Http\Resources\ProductResources\ProductCollection;
 
 /**
  * Class ProductFetchController
@@ -32,13 +33,12 @@ class ProductFetchController extends Controller {
     /**
      * Return a list of products.
      *
-     * @return JsonResponse
+     * @return ProductCollection
      */
-    public function list(): JsonResponse {
-        // TODO
-        return response()->json([
-			'method' => 'ProductFetchController@list'
-		]);
+    public function list(): ProductCollection {
+        $products = $this->productService->all();
+
+        return new ProductCollection($products);
     }
 	
     /**
@@ -46,12 +46,13 @@ class ProductFetchController extends Controller {
      *
 	 * @param Request $request
 	 * @param string $productId
-     * @return \Illuminate\Http\Response
+     * @return ProductResource
      */
-    public function get(Request $request, string $productId): JsonResponse {
-        // TODO
-        return response()->json([
-			'method' => 'ProductFetchController@get'
-		]);
+    public function get(Request $request, string $productId): ProductResource {
+        $product = $this->productService
+						->with(['productTags'])
+						->find($productId);
+
+        return new ProductResource($product);
     }
 }

@@ -13,7 +13,8 @@ class AddForeignKeysToProductTagTranslationsTable extends Migration {
     public function up() {
         Schema::table('product_tag_translations', function (Blueprint $table) {
             $table->foreignId('product_tag_id')->constrained();
-            $table->foreignId('language_id')->constrained();
+            $table->string('language_slug');
+            $table->foreign('language_slug')->references('slug')->on('languages');
         });
     }
 
@@ -25,7 +26,7 @@ class AddForeignKeysToProductTagTranslationsTable extends Migration {
     public function down() {
         Schema::table('product_tag_translations', function (Blueprint $table) {
             $table->dropForeign(['product_tag_id']);
-            $table->dropForeign(['language_id']);
+            $table->dropForeign(['language_slug']);
         });
     }
 }
