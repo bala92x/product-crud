@@ -22,7 +22,7 @@ class ProductTranslationsTableSeeder extends Seeder {
             foreach ($languages as $language) {
                 DB::table('product_translations')->insert([
 					'product_id' 	=> $product->id,
-					'language_id' 	=> $language->id,
+					'language_slug' => $language->slug,
 					'name' 			=> $faker->sentence,
 					'slug' 			=> $faker->unique->slug,
 					'description' 	=> $faker->realText(200),

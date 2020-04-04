@@ -24,7 +24,7 @@ class ProductTagTranslationsTableSeeder extends Seeder {
 
                 DB::table('product_tag_translations')->insert([
 					'product_tag_id' 	=> $productTag->id,
-					'language_id' 		=> $language->id,
+					'language_slug' 	=> $language->slug,
 					'name' 				=> $name,
 					'slug' 				=> $name,
 					'created_at' 		=> $faker->dateTimeBetween('-4 months', '-3 month'),
