@@ -4,16 +4,20 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
-{
+use App\Services\Interfaces\BaseServiceInterface;
+use App\Services\Interfaces\ProductServiceInterface;
+use App\Services\BaseService;
+use App\Services\ProductService;
+
+class AppServiceProvider extends ServiceProvider {
     /**
      * Register any application services.
      *
      * @return void
      */
-    public function register()
-    {
-        //
+    public function register() {
+        $this->app->bind(BaseServiceInterface::class, BaseService::class);
+        $this->app->bind(ProductServiceInterface::class, ProductService::class);
     }
 
     /**
@@ -21,8 +25,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
+    public function boot() {
         //
     }
 }
