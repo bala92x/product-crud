@@ -31,6 +31,18 @@ class ProductTag extends Model {
 	];
 
     /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted(): void {
+        static::deleting(function ($productTag) {
+            $productTag->products()->detach();
+            $productTag->productTagTranslations()->delete();
+        });
+    }
+
+    /**
      * Get the translations of the product tag.
      * 
      * @return HasMany

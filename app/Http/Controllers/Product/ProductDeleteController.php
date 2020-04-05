@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 
 use App\Services\Interfaces\ProductServiceInterface;
 use App\Services\ProductService;
@@ -32,12 +32,11 @@ class ProductDeleteController extends Controller {
      * Delete a product.
      * 
 	 * @param string $productId
-     * @return JsonResponse
+     * @return Response
      */
-    public function delete(string $productId): JsonResponse {
-        // TODO
-        return response()->json([
-			'method' => 'ProductDeleteController@delete'
-		]);
+    public function delete(string $productId): Response {
+        $this->productService->delete($productId);
+		
+        return response(null, 204);
     }
 }
