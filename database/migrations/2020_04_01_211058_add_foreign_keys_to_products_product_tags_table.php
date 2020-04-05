@@ -12,9 +12,15 @@ class AddForeignKeysToProductsProductTagsTable extends Migration {
      */
     public function up() {
         Schema::table('products_product_tags', function (Blueprint $table) {
-            $table->foreignId('product_id')->constrained();
-            $table->foreignId('product_tag_id')->constrained();
-            $table->unique(['product_id', 'product_tag_id']);
+            if (env('DB_CONNECTION') === 'sqlite') {
+                $table->foreignId('product_id')->nullable()->constrained();
+                $table->foreignId('product_tag_id')->nullable()->constrained();
+                $table->unique(['product_id', 'product_tag_id']);
+            } else {
+                $table->foreignId('product_id')->constrained();
+                $table->foreignId('product_tag_id')->constrained();
+                $table->unique(['product_id', 'product_tag_id']);
+            }
         });
     }
 

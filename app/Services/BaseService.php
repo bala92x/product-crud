@@ -39,7 +39,9 @@ class BaseService implements BaseServiceInterface {
 	 * @return Collection
      */
     public function all(): Collection {
-        return $this->query ? $this->query->get() : $this->model->all();
+        $queryBase = $this->query ?: $this->model;
+		
+        return $queryBase->get();
     }
 
     /**

@@ -12,9 +12,15 @@ class AddForeignKeysToProductTagTranslationsTable extends Migration {
      */
     public function up() {
         Schema::table('product_tag_translations', function (Blueprint $table) {
-            $table->foreignId('product_tag_id')->constrained();
-            $table->string('language_slug');
-            $table->foreign('language_slug')->references('slug')->on('languages');
+            if (env('DB_CONNECTION') === 'sqlite') {
+                $table->foreignId('product_tag_id')->nullable()->constrained();
+                $table->string('language_slug')->nullable();
+                $table->foreign('language_slug')->nullable()->references('slug')->on('languages');
+            } else {
+                $table->foreignId('product_tag_id')->constrained();
+                $table->string('language_slug');
+                $table->foreign('language_slug')->references('slug')->on('languages');
+            }
         });
     }
 

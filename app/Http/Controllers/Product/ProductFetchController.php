@@ -49,9 +49,7 @@ class ProductFetchController extends Controller {
      * @return ProductResource
      */
     public function get(Request $request, string $productId): ProductResource {
-        $product = $this->productService
-						->with(['productTags'])
-						->find($productId);
+        $product = $this->productService->find($productId);
 
         return new ProductResource($product);
     }
