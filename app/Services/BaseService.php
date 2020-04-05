@@ -84,7 +84,13 @@ class BaseService implements BaseServiceInterface {
      * @return bool
      */
     public function delete($id): bool {
-        return $this->model->findOrFail($id)->delete();
+        $instance = $this->model->find($id);
+		
+        if ($instance) {
+            return $instance->delete();
+        }
+
+        return false;
     }
 	
     /**

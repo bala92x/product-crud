@@ -6,8 +6,6 @@ use Tests\TestCase;
 use Illuminate\Support\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-use App\Models\Product;
-use App\Services\ProductService;
 use App\Http\Resources\ProductResources\ProductCollection;
 
 /**
@@ -16,7 +14,7 @@ use App\Http\Resources\ProductResources\ProductCollection;
  * @package Tests\Feature\ProductTests
  */
 class ProductListTest extends TestCase {
-    use RefreshDatabase;
+    use RefreshDatabase, RegisterProductService;
 	
     /**
      * @var Collection 
@@ -32,9 +30,9 @@ class ProductListTest extends TestCase {
         parent::setUp();
 
         $this->seed();
+        $this->registerProductService();
 		
-        $productService = new ProductService(new Product());
-        $this->products = $productService->all();
+        $this->products = $this->productService->all();
     }
 	
     /**

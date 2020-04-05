@@ -42,6 +42,19 @@ class Product extends Model {
 	];
 
     /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted(): void {
+        static::deleting(function ($product) {
+            // TODO: delete image
+            $product->productTags()->detach();
+            $product->productTranslations()->delete();
+        });
+    }
+
+    /**
      * Get the translations of the product.
      *
      * @return HasMany
