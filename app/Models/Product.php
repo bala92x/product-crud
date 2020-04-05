@@ -48,6 +48,7 @@ class Product extends Model {
      */
     protected static function booted(): void {
         static::deleting(function ($product) {
+            // TODO: delete image
             $product->productTags()->detach();
             $product->productTranslations()->delete();
         });

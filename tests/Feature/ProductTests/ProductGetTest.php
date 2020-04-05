@@ -6,8 +6,6 @@ use Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-use App\Models\Product;
-use App\Services\ProductService;
 use App\Http\Resources\ProductResources\ProductResource;
 
 /**
@@ -16,12 +14,7 @@ use App\Http\Resources\ProductResources\ProductResource;
  * @package Tests\Feature\ProductTests
  */
 class ProductGetTest extends TestCase {
-    use RefreshDatabase;
-	
-    /**
-     * @var ProductService 
-     */
-    private $productService;
+    use RefreshDatabase, RegisterProductService;
 	
     /**
      * Set up testing environment.
@@ -32,8 +25,7 @@ class ProductGetTest extends TestCase {
         parent::setUp();
 		
         $this->seed();
-		
-        $this->productService = new ProductService(new Product());
+        $this->registerProductService();
     }
 	
     /**
@@ -57,7 +49,7 @@ class ProductGetTest extends TestCase {
      *
      * @return void
      */
-    public function testGetNonexistentId(): void {
+    public function testGetNonexistentProduct(): void {
         $productId	= Config::get('app.seeder_quantity') + 1;
         $route 		= '/api/products/' . $productId;
         $response 	= $this->get($route);
