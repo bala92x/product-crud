@@ -27,7 +27,7 @@ class ProductTag extends Model {
     protected $table = 'product_tags';
 	
     protected $appends = [
-		'product_tag_translations'
+		'productTagTranslations'
 	];
 
     /**

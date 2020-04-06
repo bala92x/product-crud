@@ -19,14 +19,14 @@ class ProductResource extends JsonResource {
     public function toArray($request) {
         return [
 			'id' 					=> $this->id,
-			'published_at' 			=> $this->published_at,
-			'published_until' 		=> $this->published_until,
+			'publishedAt' 			=> $this->published_at,
+			'publishedUntil' 		=> $this->published_until,
 			'price' 				=> $this->price,
-			'image_path' 			=> $this->image_path,
-			'created_at' 			=> $this->created_at,
-			'updated_at' 			=> $this->updated_at,
-			'product_translations' 	=> ProductTranslationResource::collection($this->product_translations),
-			'product_tags' 			=> ProductTagResource::collection(
+			'imagePath' 			=> $this->image_path,
+			'createdAt' 			=> $this->created_at,
+			'updatedAt' 			=> $this->updated_at,
+			'productTranslations' 	=> ProductTranslationResource::collection($this->product_translations),
+			'productTags' 			=> ProductTagResource::collection(
 				$this->whenLoaded('productTags')
 			)
 		];

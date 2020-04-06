@@ -236,7 +236,6 @@ return [
     */
 
 	'seeder_quantity' 	=> env('SEEDER_QUANTITY', 10),
-
 	'languages'			=> [
 
 		'hu_HU'	=> [
@@ -250,5 +249,7 @@ return [
 			'slug' 			=> 'en'
 		]
 
-	]
+		],
+	'max_image_size'	=> env('MAX_IMAGE_SIZE', 10240), // KB
+	'max_text_length'	=> env('MAX_TEXT_LENGTH', 50000)
 ];
