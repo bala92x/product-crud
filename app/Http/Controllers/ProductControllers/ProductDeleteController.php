@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Product;
+namespace App\Http\Controllers\ProductControllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -8,11 +8,6 @@ use Illuminate\Http\Response;
 use App\Services\Interfaces\ProductServiceInterface;
 use App\Services\ProductService;
 
-/**
- * Class ProductDeleteController
- *
- * @package App\Http\Controllers\Product
- */
 class ProductDeleteController extends Controller {
     /**
      * @var ProductService 

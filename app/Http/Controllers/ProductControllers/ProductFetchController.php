@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Product;
+namespace App\Http\Controllers\ProductControllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,11 +10,6 @@ use App\Services\ProductService;
 use App\Http\Resources\ProductResources\ProductResource;
 use App\Http\Resources\ProductResources\ProductCollection;
 
-/**
- * Class ProductFetchController
- *
- * @package App\Http\Controllers\Product
- */
 class ProductFetchController extends Controller {
     /**
      * @var ProductService 

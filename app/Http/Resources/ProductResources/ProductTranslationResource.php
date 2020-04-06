@@ -19,12 +19,12 @@ class ProductTranslationResource extends JsonResource {
     public function toArray($request) {
         return [
 			'id' 			=> $this->id,
-			'language_slug'	=> $this->language_slug,
+			'languageSlug'	=> $this->language_slug,
 			'name'			=> $this->name,
 			'slug'			=> $this->slug,
 			'description'	=> $this->description,
-			'created_at' 	=> $this->created_at,
-			'updated_at' 	=> $this->updated_at
+			'createdAt' 	=> $this->created_at,
+			'updatedAt' 	=> $this->updated_at
 		];
     }
 }

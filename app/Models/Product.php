@@ -38,7 +38,7 @@ class Product extends Model {
 	];
 
     protected $appends = [
-		'product_translations'
+		'productTranslations'
 	];
 
     /**

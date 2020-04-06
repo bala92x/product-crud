@@ -19,9 +19,9 @@ class ProductTagResource extends JsonResource {
     public function toArray($request) {
         return [
 			'id' 						=> $this->id,
-			'created_at' 				=> $this->created_at,
-			'updated_at' 				=> $this->updated_at,
-			'product_tag_translations' 	=> ProductTagTranslationResource::collection($this->product_tag_translations)
+			'createdAt' 				=> $this->created_at,
+			'updatedAt' 				=> $this->updated_at,
+			'productTagTranslations' 	=> ProductTagTranslationResource::collection($this->product_tag_translations)
 		];
     }
 }
