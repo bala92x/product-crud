@@ -2,16 +2,21 @@
 
 namespace Tests\Feature\ProductTests;
 
-use Tests\TestCase;
 use Illuminate\Support\Collection;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Http\Resources\ProductResources\ProductCollection;
 
-class ProductListTest extends TestCase {
-    use RefreshDatabase, RegistersProductService;
+class ProductListTest extends ProductTestCase {
+    /**
+     * Base url
+     * 
+     * @var string
+     */
+    private $baseUrl = '/api/products/';
 	
     /**
+	 * All products.
+	 * 
      * @var Collection 
      */
     private $products;
@@ -23,9 +28,6 @@ class ProductListTest extends TestCase {
      */
     public function setUp(): void {
         parent::setUp();
-
-        $this->seed();
-        $this->registerProductService();
 		
         $this->products = $this->productService->all();
     }
@@ -36,7 +38,7 @@ class ProductListTest extends TestCase {
      * @return void
      */
     public function testListAllProducts(): void {
-        $route 			= '/api/products/';
+        $route 			= $this->baseUrl;
         $response 		= $this->get($route);
         $expectedJson 	= json_encode(new ProductCollection($this->products));
 

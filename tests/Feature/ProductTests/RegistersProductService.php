@@ -8,7 +8,7 @@ trait RegistersProductService {
     /**
      * @var ProductService 
      */
-    private $productService;
+    protected $productService;
 	
     /**
      * Register the product service
