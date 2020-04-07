@@ -47,6 +47,13 @@ interface BaseServiceInterface {
     public function delete(int $id): bool;
 	
     /**
+     * Return the count of all instances.
+     *
+     * @return int
+     */
+    public function count(): int;
+	
+    /**
      * Eager load relationships.
      *
      * @param array $relations

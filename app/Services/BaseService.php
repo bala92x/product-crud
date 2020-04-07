@@ -88,6 +88,15 @@ class BaseService implements BaseServiceInterface {
 
         return false;
     }
+
+    /**
+     * Return the count of all instances.
+     *
+     * @return int
+     */
+    public function count(): int {
+        return $this->model->count();
+    }
 	
     /**
      * Eager load relationships.

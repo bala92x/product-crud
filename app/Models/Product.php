@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -97,18 +96,5 @@ class Product extends Model {
 			ProductProductTag::class,
 			'product_id'
 		)->withTimestamps();
-    }
-	
-    /**
-     * Get the image path attribute.
-     * 
-     * @return string
-     */
-    public function getImagePathAttribute($value): string {
-        if ($value === '/images/default-product-image.png') {
-            return url($value);
-        }
-		
-        return asset(Storage::url($value));
     }
 }

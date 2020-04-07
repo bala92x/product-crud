@@ -2,27 +2,15 @@
 
 namespace Tests\Feature\ProductTests;
 
-use Tests\TestCase;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ProductDeleteTest extends TestCase {
-    use RefreshDatabase;
-	
+class ProductDeleteTest extends ProductTestCase {
     /**
-     * Set up testing environment.
-     *
-	 * @return void
+     * Base url
+     * 
+     * @var string
      */
-    public function setUp(): void {
-        parent::setUp();
-        Storage::fake('public');
-		
-        $this->seed();
-		
-        $this->imagesBaseFolder = '/images/product-images/';
-    }
+    private $baseUrl = '/api/products/delete/';
 	
     /**
      * Test delete product
@@ -31,7 +19,7 @@ class ProductDeleteTest extends TestCase {
      */
     public function testDeleteProduct(): void {
         $productId		= 1;
-        $route 			= '/api/products/delete/' . $productId;
+        $route 			= $this->baseUrl . $productId;
 		
         Storage::disk('public')->assertExists($this->imagesBaseFolder . $productId);
 		
@@ -47,9 +35,8 @@ class ProductDeleteTest extends TestCase {
      * @return void
      */
     public function testDeleteNonexistentProduct(): void {
-        $productId		= Config::get('app.seeder_quantity') + 1;
-        $route 			= '/api/products/delete/' . $productId;
-        $response 		= $this->delete($route);
+        $route 		= $this->baseUrl . $this->invalidId;
+        $response 	= $this->delete($route);
 
         $response->assertNoContent(204);
     }

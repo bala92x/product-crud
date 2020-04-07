@@ -2,26 +2,15 @@
 
 namespace Tests\Feature\ProductTests;
 
-use Tests\TestCase;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-
 use App\Http\Resources\ProductResources\ProductResource;
 
-class ProductGetTest extends TestCase {
-    use RefreshDatabase, RegistersProductService;
-	
+class ProductGetTest extends ProductTestCase {
     /**
-     * Set up testing environment.
-     *
-	 * @return void
+     * Base url
+     * 
+     * @var string
      */
-    public function setUp(): void {
-        parent::setUp();
-		
-        $this->seed();
-        $this->registerProductService();
-    }
+    private $baseUrl = '/api/products/';
 	
     /**
      * Test get product
@@ -31,7 +20,7 @@ class ProductGetTest extends TestCase {
     public function testGetProduct(): void {
         $productId		= 1;
         $product		= $this->productService->find($productId);
-        $route 			= '/api/products/' . $productId;
+        $route 			= $this->baseUrl . $productId;
         $response 		= $this->get($route);
         $expectedJson 	= json_encode(new ProductResource($product));
 
@@ -45,8 +34,7 @@ class ProductGetTest extends TestCase {
      * @return void
      */
     public function testGetNonexistentProduct(): void {
-        $productId	= Config::get('app.seeder_quantity') + 1;
-        $route 		= '/api/products/' . $productId;
+        $route 		= $this->baseUrl . $this->invalidId;
         $response 	= $this->get($route);
 
         $response->assertStatus(404);
