@@ -24,8 +24,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProductTranslation extends Model {
     use SoftDeletes;
 	
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
     protected $table = 'product_translations';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
 		'product_id',
 		'language_slug',

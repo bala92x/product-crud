@@ -24,8 +24,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class ProductTag extends Model {
     use SoftDeletes;
 	
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
     protected $table = 'product_tags';
 	
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
     protected $appends = [
 		'productTagTranslations'
 	];

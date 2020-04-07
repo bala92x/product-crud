@@ -8,11 +8,6 @@ use Illuminate\Support\Collection;
 
 use App\Services\Interfaces\BaseServiceInterface;
 
-/**
- * Class BaseService
- * 
- * @package App\Services
- */
 class BaseService implements BaseServiceInterface {
     /**
      * @var Model
@@ -28,6 +23,7 @@ class BaseService implements BaseServiceInterface {
      * BaseService constructor.
      *
      * @param Model $model
+	 * @return void
      */
     public function __construct(Model $model) {
         $this->model = $model;
@@ -71,19 +67,19 @@ class BaseService implements BaseServiceInterface {
 	 *  
      * @param int $id
      * @param array $attributes
-     * @return bool
+     * @return Model
      */
-    public function update(int $id, array $attributes): bool {
-        return $this->model->findOrFail($id)->update($attributes);
+    public function update(int $id, array $attributes): Model {
+        return tap($this->model->findOrFail($id))->update($attributes);
     }
-	
+
     /**
-     * Deletes an instance.
+     * Delete an instance.
      *
      * @param int $id
      * @return bool
      */
-    public function delete($id): bool {
+    public function delete(int $id): bool {
         $instance = $this->model->find($id);
 		
         if ($instance) {

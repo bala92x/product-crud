@@ -2,15 +2,9 @@
 
 namespace Tests\Feature\ProductTests;
 
-use App\Models\Product;
-use App\Services\ProductService;
+use App\Services\Interfaces\ProductServiceInterface;
 
-/**
- * Trait RegisterProductService
- * 
- * @package Tests\Feature\ProductTests
- */
-trait RegisterProductService {
+trait RegistersProductService {
     /**
      * @var ProductService 
      */
@@ -22,6 +16,6 @@ trait RegisterProductService {
      * @return void
      */
     protected function registerProductService(): void {
-        $this->productService = new ProductService(new Product());
+        $this->productService = app()->make(ProductServiceInterface::class);
     }
 }

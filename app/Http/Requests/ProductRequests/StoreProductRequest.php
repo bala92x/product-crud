@@ -73,9 +73,13 @@ class StoreProductRequest extends ApiRequest {
      * @return array
      */
     protected function additionalInput(): array {
-        return [
-            'productId' => $this->productId,
-        ];
+        $additionalInput = [];
+
+        if ($this->productId) {
+            $additionalInput['productId'] = $this->productId;
+        }
+
+        return $additionalInput;
     }
 	
     /**

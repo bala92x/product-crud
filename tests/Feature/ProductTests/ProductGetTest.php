@@ -8,13 +8,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Http\Resources\ProductResources\ProductResource;
 
-/**
- * Class ProductGetTest
- * 
- * @package Tests\Feature\ProductTests
- */
 class ProductGetTest extends TestCase {
-    use RefreshDatabase, RegisterProductService;
+    use RefreshDatabase, RegistersProductService;
 	
     /**
      * Set up testing environment.

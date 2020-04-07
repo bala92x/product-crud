@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -28,8 +29,29 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Product extends Model {
     use SoftDeletes;
 	
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
     protected $table = 'products';
+	
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+		'published_at'		=> 'datetime',
+		'published_until'	=> 'datetime',
+		'price' 			=> 'int',
+	];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
 		'published_at',
 		'published_until',
@@ -37,6 +59,11 @@ class Product extends Model {
 		'image_path'
 	];
 
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
     protected $appends = [
 		'productTranslations'
 	];
@@ -78,6 +105,23 @@ class Product extends Model {
 	 * @return BelongsToMany
      */
     public function productTags(): BelongsToMany {
-        return $this->belongsToMany(ProductTag::class, ProductProductTag::class, 'product_id');
+        return $this->belongsToMany(
+			ProductTag::class,
+			ProductProductTag::class,
+			'product_id'
+		)->withTimestamps();
+    }
+	
+    /**
+     * Get the image path attribute.
+     * 
+     * @return string
+     */
+    public function getImagePathAttribute($value): string {
+        if ($value === '/images/default-product-image.png') {
+            return url($value);
+        }
+		
+        return asset(Storage::url($value));
     }
 }
