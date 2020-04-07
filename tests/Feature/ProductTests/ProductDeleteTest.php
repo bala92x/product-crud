@@ -4,6 +4,7 @@ namespace Tests\Feature\ProductTests;
 
 use Tests\TestCase;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ProductDeleteTest extends TestCase {
@@ -16,8 +17,11 @@ class ProductDeleteTest extends TestCase {
      */
     public function setUp(): void {
         parent::setUp();
+        Storage::fake('public');
 		
         $this->seed();
+		
+        $this->imagesBaseFolder = '/images/product-images/';
     }
 	
     /**
@@ -28,8 +32,11 @@ class ProductDeleteTest extends TestCase {
     public function testDeleteProduct(): void {
         $productId		= 1;
         $route 			= '/api/products/delete/' . $productId;
-        $response 		= $this->delete($route);
-
+		
+        Storage::disk('public')->assertExists($this->imagesBaseFolder . $productId);
+		
+        $response = $this->delete($route);
+		
         $response->assertNoContent(204);
         $this->assertProductDeleted($productId);
     }
@@ -56,7 +63,6 @@ class ProductDeleteTest extends TestCase {
         $this->assertSoftDeleted('products', ['id' => $productId]);
         $this->assertSoftDeleted('product_translations', ['product_id' => $productId]);
         $this->assertDatabaseMissing('products_product_tags', ['product_id' => $productId]);
-		
-        // TODO: assert that the image is deleted
+        Storage::disk('public')->assertMissing($this->imagesBaseFolder . $productId);
     }
 }

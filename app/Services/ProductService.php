@@ -108,6 +108,9 @@ class ProductService extends BaseService implements ProductServiceInterface {
 		
         if ($product) {
             $this->imageService->deleteDirectory($this->getImageFolder($product->id));
+            $product->productTags()->detach();
+            $product->productTranslations()->delete();
+			
             return $product->delete();
         }
 
