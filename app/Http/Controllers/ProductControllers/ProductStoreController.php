@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\ProductControllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\JsonResponse;
 
-use App\Http\Requests\ProductRequests\StoreProductRequest;
-use App\Services\Interfaces\ProductServiceInterface;
 use App\Services\ProductService;
+use App\Services\Interfaces\ProductServiceInterface;
+use App\Http\Resources\ProductResources\ProductResource;
+use App\Http\Requests\ProductRequests\StoreProductRequest;
 
 class ProductStoreController extends Controller {
     /**
@@ -29,12 +29,15 @@ class ProductStoreController extends Controller {
      * 
 	 * @param StoreProductRequest $request
 	 * @param string $productId
-     * @return JsonResponse
+     * @return ProductResource
      */
-    public function store(StoreProductRequest $request, string $productId = null): JsonResponse {
-        // TODO: implement
-        return response()->json([
-			'method' => 'ProductStoreController@store'
-		]);
+    public function store(StoreProductRequest $request, string $productId = null): ProductResource {
+        if ($productId) {
+            $product = $this->productService->update($productId, $request->all());
+        } else {
+            $product = $this->productService->create($request->all());
+        }
+		
+        return new ProductResource($product);
     }
 }

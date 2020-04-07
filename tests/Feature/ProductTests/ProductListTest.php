@@ -8,13 +8,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Http\Resources\ProductResources\ProductCollection;
 
-/**
- * Class ProductListTest
- * 
- * @package Tests\Feature\ProductTests
- */
 class ProductListTest extends TestCase {
-    use RefreshDatabase, RegisterProductService;
+    use RefreshDatabase, RegistersProductService;
 	
     /**
      * @var Collection 

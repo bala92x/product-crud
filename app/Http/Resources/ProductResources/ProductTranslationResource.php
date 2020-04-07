@@ -4,11 +4,6 @@ namespace App\Http\Resources\ProductResources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/**
- * Class ProductTranslationResource
- * 
- * @package App\Http\Resources\ProductResources
- */
 class ProductTranslationResource extends JsonResource {
     /**
      * Transform the resource into an array.

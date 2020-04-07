@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use App\Services\Interfaces\ProductServiceInterface;
+
 class CreateProductsTable extends Migration {
     /**
      * Run the migrations.
@@ -16,7 +18,7 @@ class CreateProductsTable extends Migration {
             $table->dateTime('published_at');
             $table->dateTime('published_until')->nullable();
             $table->bigInteger('price');
-            $table->string('image_path');
+            $table->string('image_path')->default('/images/default-product-image.png');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,5 +31,7 @@ class CreateProductsTable extends Migration {
      */
     public function down() {
         Schema::dropIfExists('products');
+        $productService = app()->make(ProductServiceInterface::class);
+        $productService->deleteImages();
     }
 }

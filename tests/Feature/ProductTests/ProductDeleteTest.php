@@ -6,11 +6,6 @@ use Tests\TestCase;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-/**
- * Class ProductDeleteTest
- * 
- * @package Tests\Feature\ProductTests
- */
 class ProductDeleteTest extends TestCase {
     use RefreshDatabase;
 	

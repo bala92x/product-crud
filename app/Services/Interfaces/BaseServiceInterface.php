@@ -5,11 +5,6 @@ namespace App\Services\Interfaces;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
-/**
- * Interface BaseServiceInterface
- * 
- * @package App\Services\Interfaces
- */
 interface BaseServiceInterface {
     /**
 	 * Get all instances.
@@ -39,17 +34,17 @@ interface BaseServiceInterface {
 	 *  
      * @param int $id
      * @param array $attributes
-     * @return bool
+     * @return Model
      */
-    public function update(int $id, array $attributes): bool;
+    public function update(int $id, array $attributes): Model;
 	
     /**
-     * Deletes an instance.
+     * Delete an instance.
      *
      * @param int $id
      * @return bool
      */
-    public function delete($id): bool;
+    public function delete(int $id): bool;
 	
     /**
      * Eager load relationships.
