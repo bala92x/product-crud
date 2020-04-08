@@ -12,7 +12,7 @@ class ProductListTest extends ProductTestCase {
      * 
      * @var string
      */
-    private $baseUrl = '/api/products/';
+    const BASE_URL = '/api/products/';
 	
     /**
 	 * All products.
@@ -38,7 +38,7 @@ class ProductListTest extends ProductTestCase {
      * @return void
      */
     public function testListAllProducts(): void {
-        $route 			= $this->baseUrl;
+        $route 			= self::BASE_URL;
         $response 		= $this->get($route);
         $expectedJson 	= json_encode(new ProductCollection($this->products));
 

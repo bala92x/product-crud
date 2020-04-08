@@ -12,7 +12,7 @@ class ProductUpdateTest extends ProductTestCase {
      * 
      * @var string
      */
-    private $baseUrl = '/api/products/store/';
+    const BASE_URL = '/api/products/store/';
 	
     /**
      * Test update product
@@ -22,7 +22,7 @@ class ProductUpdateTest extends ProductTestCase {
     public function testUpdateProduct(): void {
         $productId		= 1;
         $initialProduct	= $this->productService->find($productId);
-        $route 			= $this->baseUrl . $productId;
+        $route 			= self::BASE_URL . $productId;
         $response 		= $this->post($route, $this->fixtures['productUpdateData']);
         $product		= $this->productService->find($productId);
         $expectedJson 	= json_encode(new ProductResource($product));
@@ -42,7 +42,7 @@ class ProductUpdateTest extends ProductTestCase {
     public function testValidationErrors(): void {
         $productId		= 1;
         $initialProduct	= $this->productService->find($productId);
-        $route 			= $this->baseUrl . $productId;
+        $route 			= self::BASE_URL . $productId;
         $response 		= $this->post($route, $this->fixtures['productInvalidData']);
         $expectedErrors	= json_encode([
 			'publishedUntil'	=> [
@@ -73,11 +73,11 @@ class ProductUpdateTest extends ProductTestCase {
      */
     public function testNotFound(): void {
         $productId		= $this->invalidId;
-        $route 			= $this->baseUrl . $productId;
+        $route 			= self::BASE_URL . $productId;
         $response 		= $this->post($route, $this->fixtures['productUpdateData']);
 		
         $response->assertStatus(404);
 				
-        Storage::disk('public')->assertMissing($this->imagesBaseFolder . $productId);
+        Storage::disk('public')->assertMissing(self::IMAGES_BASE_FOLDER . $productId);
     }
 }

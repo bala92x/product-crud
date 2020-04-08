@@ -32,15 +32,6 @@ class ProductTag extends Model {
     protected $table = 'product_tags';
 	
     /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array
-     */
-    protected $appends = [
-		'productTagTranslations'
-	];
-
-    /**
      * The "booted" method of the model.
      *
      * @return void
@@ -60,15 +51,6 @@ class ProductTag extends Model {
     public function productTagTranslations(): HasMany {
         return $this->hasMany(ProductTagTranslation::class);
     }
-	
-    /**
-     * Get the product tag translations attribute.
-	 * 
-	 * @return Collection
-     */
-    public function getProductTagTranslationsAttribute(): Collection {
-        return $this->productTagTranslations()->get();
-    }
 
     /**
      * Get the products of the product tag.
@@ -76,6 +58,8 @@ class ProductTag extends Model {
 	 * @return BelongsToMany
      */
     public function products(): BelongsToMany {
-        return $this->belongsToMany(Product::class, ProductProductTag::class, 'product_tag_id');
+        return $this->belongsToMany(Product::class, ProductProductTag::class, 'product_tag_id')
+					->with('productTranslations')
+					->withTimestamps();
     }
 }

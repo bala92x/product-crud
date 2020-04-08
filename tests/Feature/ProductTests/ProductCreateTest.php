@@ -12,7 +12,7 @@ class ProductCreateTest extends ProductTestCase {
      * 
      * @var string
      */
-    private $baseUrl = '/api/products/store/';
+    const BASE_URL = '/api/products/store/';
 	
     /**
      * Test create product
@@ -20,7 +20,7 @@ class ProductCreateTest extends ProductTestCase {
      * @return void
      */
     public function testCreateProduct(): void {
-        $route 			= $this->baseUrl;
+        $route 			= self::BASE_URL;
         $response 		= $this->post($route, $this->fixtures['productCreateData']);
         $productId 		= json_decode($response->getContent())->data->id;
         $product		= $this->productService->find($productId);
@@ -39,7 +39,7 @@ class ProductCreateTest extends ProductTestCase {
      */
     public function testValidationErrors(): void {
         $initialProductCount 	= $this->productService->count();
-        $route 					= $this->baseUrl;
+        $route 					= self::BASE_URL;
         $response 				= $this->post($route, $this->fixtures['productInvalidData']);
         $expectedErrors			= json_encode([
 			'publishedUntil'				=> [
@@ -63,7 +63,7 @@ class ProductCreateTest extends ProductTestCase {
         $response->assertStatus(422)
 				->assertSee($expectedErrors, $ecaped = false);
 
-        $imageFolder = $this->imagesBaseFolder . ($initialProductCount + 1);
+        $imageFolder = self::IMAGES_BASE_FOLDER . ($initialProductCount + 1);
 		
         Storage::disk('public')->assertMissing($imageFolder);
     }

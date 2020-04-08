@@ -10,7 +10,7 @@ class ProductDeleteTest extends ProductTestCase {
      * 
      * @var string
      */
-    private $baseUrl = '/api/products/delete/';
+    const BASE_URL = '/api/products/delete/';
 	
     /**
      * Test delete product
@@ -19,9 +19,9 @@ class ProductDeleteTest extends ProductTestCase {
      */
     public function testDeleteProduct(): void {
         $productId		= 1;
-        $route 			= $this->baseUrl . $productId;
+        $route 			= self::BASE_URL . $productId;
 		
-        Storage::disk('public')->assertExists($this->imagesBaseFolder . $productId);
+        Storage::disk('public')->assertExists(self::IMAGES_BASE_FOLDER . $productId);
 		
         $response = $this->delete($route);
 		
@@ -35,7 +35,7 @@ class ProductDeleteTest extends ProductTestCase {
      * @return void
      */
     public function testDeleteNonexistentProduct(): void {
-        $route 		= $this->baseUrl . $this->invalidId;
+        $route 		= self::BASE_URL . $this->invalidId;
         $response 	= $this->delete($route);
 
         $response->assertNoContent(204);
@@ -50,6 +50,6 @@ class ProductDeleteTest extends ProductTestCase {
         $this->assertSoftDeleted('products', ['id' => $productId]);
         $this->assertSoftDeleted('product_translations', ['product_id' => $productId]);
         $this->assertDatabaseMissing('products_product_tags', ['product_id' => $productId]);
-        Storage::disk('public')->assertMissing($this->imagesBaseFolder . $productId);
+        Storage::disk('public')->assertMissing(self::IMAGES_BASE_FOLDER . $productId);
     }
 }

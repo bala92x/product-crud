@@ -15,7 +15,7 @@ class ProductService extends BaseService implements ProductServiceInterface {
 	 * 
 	 * @var string
      */
-    private $imageFolderName = 'product-images';
+    const IMAGE_FOLDER_NAME = 'product-images';
 
     /**
      * ProductService constructor.
@@ -35,7 +35,7 @@ class ProductService extends BaseService implements ProductServiceInterface {
      * @return Collection
      */
     public function all(): Collection {
-        return $this->model->with(['productTags'])->get();
+        return $this->model->with(['productTranslations', 'productTags'])->get();
     }
 	
     /**
@@ -44,8 +44,8 @@ class ProductService extends BaseService implements ProductServiceInterface {
      * @param int $id
      * @return Model
      */
-    public function find(int $id): ?Model {
-        return $this->model->with('productTags')->findOrFail($id);
+    public function find(int $id): Model {
+        return $this->model->with(['productTranslations', 'productTags'])->findOrFail($id);
     }
 	
     /**
@@ -122,7 +122,7 @@ class ProductService extends BaseService implements ProductServiceInterface {
      *
      * @return bool
      */
-    public function deleteImages(): bool {
+    public function deleteAllImages(): bool {
         return $this->imageService->deleteDirectory($this->getImageFolder());
     }
 	
@@ -133,7 +133,7 @@ class ProductService extends BaseService implements ProductServiceInterface {
      * @return string
      */
     private function getImageFolder(int $id = null): string {
-        return implode('/', ['images', $this->imageFolderName, $id]);
+        return implode('/', ['images', self::IMAGE_FOLDER_NAME, $id]);
     }
 	
     /**

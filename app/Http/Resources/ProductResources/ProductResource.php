@@ -33,7 +33,9 @@ class ProductResource extends JsonResource {
 			'price' 				=> $this->price,
 			'createdAt' 			=> $this->created_at,
 			'updatedAt' 			=> $this->updated_at,
-			'productTranslations' 	=> ProductTranslationResource::collection($this->product_translations),
+			'productTranslations' 	=> ProductTranslationResource::collection(
+				$this->whenLoaded('productTranslations')
+			),
 			'productTags' 			=> ProductTagResource::collection(
 				$this->whenLoaded('productTags')
 			)

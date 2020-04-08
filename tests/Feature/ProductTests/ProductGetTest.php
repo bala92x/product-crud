@@ -10,7 +10,7 @@ class ProductGetTest extends ProductTestCase {
      * 
      * @var string
      */
-    private $baseUrl = '/api/products/';
+    const BASE_URL = '/api/products/';
 	
     /**
      * Test get product
@@ -20,7 +20,7 @@ class ProductGetTest extends ProductTestCase {
     public function testGetProduct(): void {
         $productId		= 1;
         $product		= $this->productService->find($productId);
-        $route 			= $this->baseUrl . $productId;
+        $route 			= self::BASE_URL . $productId;
         $response 		= $this->get($route);
         $expectedJson 	= json_encode(new ProductResource($product));
 
@@ -34,7 +34,7 @@ class ProductGetTest extends ProductTestCase {
      * @return void
      */
     public function testGetNonexistentProduct(): void {
-        $route 		= $this->baseUrl . $this->invalidId;
+        $route 		= self::BASE_URL . $this->invalidId;
         $response 	= $this->get($route);
 
         $response->assertStatus(404);

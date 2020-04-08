@@ -52,12 +52,4 @@ interface BaseServiceInterface {
      * @return int
      */
     public function count(): int;
-	
-    /**
-     * Eager load relationships.
-     *
-     * @param array $relations
-     * @return BaseServiceInterface
-     */
-    public function with(array $relations): BaseServiceInterface;
 }
