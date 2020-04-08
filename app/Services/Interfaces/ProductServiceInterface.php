@@ -18,6 +18,8 @@ interface ProductServiceInterface {
 	 * 
      * @param int $id
      * @return Model
+	 * 
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
     public function find(int $id): ?Model;
 	
@@ -35,6 +37,8 @@ interface ProductServiceInterface {
      * @param int $id
      * @param array $attributes
      * @return Model
+	 * 
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
     public function update(int $id, array $attributes): Model;
 	

@@ -43,6 +43,8 @@ class ProductService extends BaseService implements ProductServiceInterface {
      * 
      * @param int $id
      * @return Model
+	 * 
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
     public function find(int $id): Model {
         return $this->model->with(['productTranslations', 'productTags'])->findOrFail($id);
@@ -77,6 +79,8 @@ class ProductService extends BaseService implements ProductServiceInterface {
      * @param int $id
      * @param array $attributes
      * @return Model
+	 * 
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
     public function update(int $id, array $attributes): Model {
         $product = $this->model->findOrFail($id);

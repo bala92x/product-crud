@@ -3,11 +3,11 @@
 namespace App\Http\Requests\ProductRequests;
 
 use Illuminate\Support\Facades\Config;
+
+use App\Http\Requests\ApiFormRequest;
 use App\Http\Requests\ProvidesAdditionalInput;
 
-use App\Http\Requests\ApiRequest;
-
-class StoreProductRequest extends ApiRequest {
+class StoreProductRequest extends ApiFormRequest {
     use ProvidesAdditionalInput;
 	
     /**

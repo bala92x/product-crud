@@ -19,3 +19,9 @@ Route::prefix('products')->group(function () {
     Route::post('/store/{productId?}', 'ProductControllers\ProductStoreController@store');
     Route::delete('/delete/{productId}', 'ProductControllers\ProductDeleteController@delete');
 });
+
+Route::fallback(function() {
+    return response()->json([
+		'message' 	=> 'Page not found.',
+	], 404);
+});
