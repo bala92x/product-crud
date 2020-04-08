@@ -11,6 +11,13 @@ class ProductTestCase extends TestCase {
     use RefreshDatabase, RegistersProductService;
 	
     /**
+     * Base url
+     * 
+     * @var string
+     */
+    const BASE_URL = '/api/products/';
+	
+    /**
      * Image base folder
      * 
      * @var string
