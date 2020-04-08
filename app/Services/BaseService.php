@@ -47,6 +47,8 @@ class BaseService implements BaseServiceInterface {
 	 * 
      * @param int $id
      * @return Model
+	 * 
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
     public function find(int $id): Model {
         $queryBase = $this->query ?: $this->model;
@@ -70,6 +72,8 @@ class BaseService implements BaseServiceInterface {
      * @param int $id
      * @param array $attributes
      * @return Model
+	 * 
+	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
     public function update(int $id, array $attributes): Model {
         return tap($this->model->findOrFail($id))->update($attributes);

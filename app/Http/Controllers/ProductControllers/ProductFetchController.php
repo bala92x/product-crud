@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\ProductControllers;
 
-use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Services\Interfaces\ProductServiceInterface;
 use App\Services\ProductService;
@@ -29,11 +31,17 @@ class ProductFetchController extends Controller {
      * Return a list of products.
      *
      * @return ProductCollection
+	 * 
+	 * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     public function list(): ProductCollection {
-        $products = $this->productService->all();
-
-        return new ProductCollection($products);
+        try {
+            $products = $this->productService->all();
+			
+            return new ProductCollection($products);
+        } catch (Exception $e) {
+            abort(500, 'Product fetch error.');
+        }
     }
 	
     /**
@@ -42,10 +50,19 @@ class ProductFetchController extends Controller {
 	 * @param Request $request
 	 * @param string $productId
      * @return ProductResource
+	 * 
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+	 * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     public function get(Request $request, string $productId): ProductResource {
-        $product = $this->productService->find((int)$productId);
-
-        return new ProductResource($product);
+        try {
+            $product = $this->productService->find((int)$productId);
+			
+            return new ProductResource($product);
+        } catch (ModelNotFoundException $e) {
+            abort(404, 'This product could not be found.');
+        } catch (Exception $e) {
+            abort(500, 'Product fetch error.');
+        }
     }
 }

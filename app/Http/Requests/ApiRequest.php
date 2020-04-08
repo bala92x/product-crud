@@ -2,24 +2,32 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Request;
 
-class ApiRequest extends FormRequest {
-    use SanitizesInput;
-	
+class ApiRequest extends Request {
     /**
-     * Throw JSON in case of failed validation.
-	 * 
-	 * @return HttpResponseException
+     * Determine if the current request probably expects a JSON response.
+     *
+     * @return bool
      */
-    protected function failedValidation(Validator $validator): HttpResponseException {
-        $content = [
-			'message' 	=> 'The given data was invalid.',
-			'errors'	=> $validator->errors()
-		];
+    public function expectsJson(): bool {
+        if (env('APP_DEBUG')) {
+            return parent::expectsJson();
+        }
 
-        throw new HttpResponseException(response($content, 422));
+        return true;
+    }
+
+    /**
+     * Determine if the current request is asking for JSON.
+     *
+     * @return bool
+     */
+    public function wantsJson(): bool {
+        if (env('APP_DEBUG')) {
+            return parent::wantsJson();
+        }
+		
+        return true;
     }
 }	
