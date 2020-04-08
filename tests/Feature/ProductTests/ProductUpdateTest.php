@@ -26,10 +26,10 @@ class ProductUpdateTest extends ProductTestCase {
         $response 		= $this->post($route, $this->fixtures['productUpdateData']);
         $product		= $this->productService->find($productId);
         $expectedJson 	= json_encode(new ProductResource($product));
-		
+
         $response->assertStatus(200)
-				->assertSee($expectedJson, $escaped = false);
-		
+		        ->assertSee($expectedJson, $escaped = false);
+
         Storage::disk('public')->assertMissing($initialProduct->image_path);
         Storage::disk('public')->assertExists($product->image_path);
     }

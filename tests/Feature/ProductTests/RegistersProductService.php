@@ -6,12 +6,14 @@ use App\Services\Interfaces\ProductServiceInterface;
 
 trait RegistersProductService {
     /**
+	 * The service used to manage products.
+	 * 
      * @var ProductService 
      */
     protected $productService;
 	
     /**
-     * Register the product service
+     * Register the product service.
      *
      * @return void
      */

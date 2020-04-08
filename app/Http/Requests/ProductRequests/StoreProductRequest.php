@@ -2,13 +2,34 @@
 
 namespace App\Http\Requests\ProductRequests;
 
+use Exception;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Http\Requests\ApiFormRequest;
 use App\Http\Requests\ProvidesAdditionalInput;
+use App\Services\ProductService;
+use App\Services\Interfaces\ProductServiceInterface;
 
 class StoreProductRequest extends ApiFormRequest {
     use ProvidesAdditionalInput;
+	
+    /**
+	 * The service used to manage products.
+	 * 
+     * @var ProductService
+     */
+    private $productService;
+	
+    /**
+     * StoreProductRequest constructor.
+     * 
+	 * @param ProductServiceInterface $productService
+     * @return void
+     */
+    public function __construct(ProductServiceInterface $productService) {
+        $this->productService = $productService;
+    }
 	
     /**
      * Get the validation rules that apply to the request.
@@ -71,15 +92,25 @@ class StoreProductRequest extends ApiFormRequest {
      * Return additional request data.
      *
      * @return array
+	 * 
+	 * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+	 * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     protected function additionalInput(): array {
-        $additionalInput = [];
-
-        if ($this->productId) {
-            $additionalInput['productId'] = $this->productId;
+        if (is_null($this->productId)) {
+            return [];
         }
-
-        return $additionalInput;
+		
+        try {
+            return [
+				'product' 	=> $this->productService->find((int)$this->productId),
+				'productId'	=> $this->productId
+			];
+        } catch (ModelNotFoundException $e) {
+            abort(404, 'This product could not be found.');
+        } catch (Exception $e) {
+            abort(500, 'Product fetch error.');
+        }
     }
 	
     /**

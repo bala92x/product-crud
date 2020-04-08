@@ -6,6 +6,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Database\Eloquent\Model;
+
+use App\Services\BaseService;
 use App\Services\Interfaces\BaseServiceInterface;
 
 
@@ -20,19 +22,18 @@ class BaseCache implements BaseServiceInterface {
     protected $lifetime;
 	
     /**
-     * @var BaseServiceInterface
+	 * The service used to manage models.
+	 * 
+     * @var BaseService
      */
     protected $baseService;
 	
     /**
+	 * The model managed by this service.
+	 * 
      * @var Model
      */
     protected $model;
-
-    /**
-     * @var Cache
-     */
-    protected $cache;
 
     /**
      * BaseCache constructor.

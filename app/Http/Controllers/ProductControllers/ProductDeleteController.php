@@ -11,6 +11,8 @@ use App\Services\Interfaces\ProductServiceInterface;
 
 class ProductDeleteController extends Controller {
     /**
+	 * The service used to manage products.
+	 * 
      * @var ProductService 
      */
     private $productService;

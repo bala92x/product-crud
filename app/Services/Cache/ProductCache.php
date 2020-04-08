@@ -5,6 +5,7 @@ namespace App\Services\Cache;
 use Illuminate\Support\Facades\Cache;
 
 use App\Models\Product;
+use App\Services\ProductService;
 use App\Services\Interfaces\ProductServiceInterface;
 
 class ProductCache extends BaseCache implements ProductServiceInterface {
@@ -12,7 +13,7 @@ class ProductCache extends BaseCache implements ProductServiceInterface {
      * ProductCache constructor.
      * 
 	 * @param Product $model
-	 * @param ProductServiceInterFace $service
+	 * @param ProductService $service
      * @return void
      */
     public function __construct(Product $model, ProductServiceInterface $service) {
