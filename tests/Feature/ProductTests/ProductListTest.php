@@ -8,13 +8,6 @@ use App\Http\Resources\ProductResources\ProductCollection;
 
 class ProductListTest extends ProductTestCase {
     /**
-     * Base url
-     * 
-     * @var string
-     */
-    const BASE_URL = '/api/products/';
-	
-    /**
 	 * All products.
 	 * 
      * @var Collection 

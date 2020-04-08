@@ -8,13 +8,6 @@ use App\Http\Resources\ProductResources\ProductResource;
 
 class ProductUpdateTest extends ProductTestCase {
     /**
-     * Base url
-     * 
-     * @var string
-     */
-    const BASE_URL = '/api/products/store/';
-	
-    /**
      * Test update product
      *
      * @return void

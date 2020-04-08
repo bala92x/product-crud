@@ -6,13 +6,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductDeleteTest extends ProductTestCase {
     /**
-     * Base url
-     * 
-     * @var string
-     */
-    const BASE_URL = '/api/products/delete/';
-	
-    /**
      * Test delete product
      *
      * @return void
