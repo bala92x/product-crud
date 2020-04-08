@@ -4,7 +4,6 @@ namespace App\Services;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 
 use App\Services\Interfaces\BaseServiceInterface;
 
@@ -12,14 +11,11 @@ class BaseService implements BaseServiceInterface {
     use UsesRelationships;
 	
     /**
+	 * The model managed by this service.
+	 * 
      * @var Model
      */
     protected $model;
-	
-    /**
-     * @var Builder
-     */
-    protected $query;
 	
     /**
      * BaseService constructor.

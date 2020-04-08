@@ -2,7 +2,16 @@
 
 namespace App\Services;
 
+use Illuminate\Database\Eloquent\Builder;
+
 trait UsesRelationShips {
+    /**
+	 * The query with relationships.
+	 * 
+     * @var Builder
+     */
+    protected $query;
+	
     /**
      * Eager load relationships.
      *

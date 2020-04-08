@@ -13,6 +13,8 @@ use App\Http\Requests\ProductRequests\StoreProductRequest;
 
 class ProductStoreController extends Controller {
     /**
+	 * The service used to manage products.
+	 * 
      * @var ProductService 
      */
     private $productService;

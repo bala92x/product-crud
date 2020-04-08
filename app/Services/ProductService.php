@@ -6,6 +6,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Product;
+use App\Services\ImageService;
 use App\Services\InterFaces\ProductServiceInterface;
 use App\Services\InterFaces\ImageServiceInterface;
 
@@ -16,6 +17,13 @@ class ProductService extends BaseService implements ProductServiceInterface {
 	 * @var string
      */
     const IMAGE_FOLDER_NAME = 'product-images';
+	
+    /**
+     * The service used to manage images.
+	 * 
+	 * @var ImageService
+     */
+    private $imageService;
 
     /**
      * ProductService constructor.
@@ -84,7 +92,7 @@ class ProductService extends BaseService implements ProductServiceInterface {
      */
     public function update(int $id, array $attributes): Model {
         $product = $this->model->findOrFail($id);
-		
+
         if (isset($attributes['image'])) {
             $imagePath = $this->imageService->replaceAs(
     			$attributes['image'],

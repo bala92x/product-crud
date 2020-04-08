@@ -14,6 +14,8 @@ use App\Http\Resources\ProductResources\ProductCollection;
 
 class ProductFetchController extends Controller {
     /**
+	 * The service used to manage products.
+	 * 
      * @var ProductService 
      */
     private $productService;
