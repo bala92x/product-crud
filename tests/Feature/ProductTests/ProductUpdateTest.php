@@ -75,8 +75,12 @@ class ProductUpdateTest extends ProductTestCase {
         $productId		= $this->invalidId;
         $route 			= self::BASE_URL . $productId;
         $response 		= $this->post($route, $this->fixtures['productUpdateData']);
-		
-        $response->assertStatus(404);
+        $expectedJson	= [
+			'message' => 'This product could not be found.'
+		];
+
+        $response->assertStatus(404)
+				->assertJson($expectedJson);
 				
         Storage::disk('public')->assertMissing(self::IMAGES_BASE_FOLDER . $productId);
     }
