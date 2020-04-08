@@ -34,9 +34,13 @@ class ProductGetTest extends ProductTestCase {
      * @return void
      */
     public function testGetNonexistentProduct(): void {
-        $route 		= self::BASE_URL . $this->invalidId;
-        $response 	= $this->get($route);
+        $route 			= self::BASE_URL . $this->invalidId;
+        $response 		= $this->get($route);
+        $expectedJson	= [
+			'message' => 'This product could not be found.'
+		];
 
-        $response->assertStatus(404);
+        $response->assertStatus(404)
+				->assertJson($expectedJson);
     }
 }
