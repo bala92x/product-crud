@@ -15,7 +15,7 @@ class ProductTestCase extends TestCase {
      * 
      * @var string
      */
-    protected $imagesBaseFolder = '/images/product-images/';
+    const IMAGES_BASE_FOLDER = '/images/product-images/';
 	
     /**
      * The data needed to create or update a product.
@@ -43,7 +43,7 @@ class ProductTestCase extends TestCase {
         $this->seed();
         $this->registerProductService();
 		
-        $this->fixtures 	= include('tests/Fixtures/productData.php');
+        $this->fixtures 	= require __DIR__ . '/../../Fixtures/productData.php';
         $this->invalidId	= Config::get('app.seeder_quantity') + 1;
     }
 }

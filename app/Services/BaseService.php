@@ -2,13 +2,15 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Collection;
 
 use App\Services\Interfaces\BaseServiceInterface;
 
 class BaseService implements BaseServiceInterface {
+    use UsesRelationships;
+	
     /**
      * @var Model
      */
@@ -46,7 +48,7 @@ class BaseService implements BaseServiceInterface {
      * @param int $id
      * @return Model
      */
-    public function find(int $id): ?Model {
+    public function find(int $id): Model {
         $queryBase = $this->query ?: $this->model;
 		
         return $queryBase->findOrFail($id);
@@ -96,17 +98,5 @@ class BaseService implements BaseServiceInterface {
      */
     public function count(): int {
         return $this->model->count();
-    }
-	
-    /**
-     * Eager load relationships.
-     *
-     * @param array $relations
-     * @return BaseServiceInterface
-     */
-    public function with(array $relations): BaseServiceInterface {
-        $this->query = $this->model->with($relations);
-		
-        return $this;
     }
 }

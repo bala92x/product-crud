@@ -32,6 +32,6 @@ class CreateProductsTable extends Migration {
     public function down() {
         Schema::dropIfExists('products');
         $productService = app()->make(ProductServiceInterface::class);
-        $productService->deleteImages();
+        $productService->deleteAllImages();
     }
 }

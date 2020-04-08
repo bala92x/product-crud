@@ -51,5 +51,5 @@ interface ProductServiceInterface {
      *
      * @return bool
      */
-    public function deleteImages(): bool;
+    public function deleteAllImages(): bool;
 }

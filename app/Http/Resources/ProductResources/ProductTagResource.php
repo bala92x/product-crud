@@ -16,7 +16,9 @@ class ProductTagResource extends JsonResource {
 			'id' 						=> $this->id,
 			'createdAt' 				=> $this->created_at,
 			'updatedAt' 				=> $this->updated_at,
-			'productTagTranslations' 	=> ProductTagTranslationResource::collection($this->product_tag_translations)
+			'productTagTranslations' 	=> ProductTagTranslationResource::collection(
+				$this->whenLoaded('productTagTranslations')
+			)
 		];
     }
 }

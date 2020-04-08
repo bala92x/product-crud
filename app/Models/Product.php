@@ -59,15 +59,6 @@ class Product extends Model {
 	];
 
     /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array
-     */
-    protected $appends = [
-		'productTranslations'
-	];
-
-    /**
      * Get the translations of the product.
      *
      * @return HasMany
@@ -76,15 +67,6 @@ class Product extends Model {
         return $this->hasMany(ProductTranslation::class);
     }
 	
-    /**
-     * Get the product translations attribute.
-	 * 
-	 * @return Collection
-     */
-    public function getProductTranslationsAttribute(): Collection {
-        return $this->productTranslations()->get();
-    }
-
     /**
      * Get the tags of the product.
 	 * 
@@ -95,6 +77,7 @@ class Product extends Model {
 			ProductTag::class,
 			ProductProductTag::class,
 			'product_id'
-		)->withTimestamps();
+		)->with('productTagTranslations')
+		->withTimestamps();
     }
 }
