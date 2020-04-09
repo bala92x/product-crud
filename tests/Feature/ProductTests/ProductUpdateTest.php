@@ -8,7 +8,7 @@ use App\Http\Resources\ProductResources\ProductResource;
 
 class ProductUpdateTest extends ProductTestCase {
     /**
-     * Test update product
+     * Test product update
      *
      * @return void
      */
@@ -21,7 +21,9 @@ class ProductUpdateTest extends ProductTestCase {
         $expectedJson 		= json_encode(new ProductResource($product));
 		
         $response->assertStatus(200)
-		        ->assertSee($expectedJson, $escaped = false);
+			->assertSee($expectedJson, $escaped = false);
+			
+        $this->assertDataSaved($product, $this->fixtures['productUpdateData']);
 
         Storage::disk('public')->assertMissing($initialImagePath);
         Storage::disk('public')->assertExists($product->image_path);
@@ -60,7 +62,7 @@ class ProductUpdateTest extends ProductTestCase {
     }
 	
     /**
-     * Test update nonexistent product
+     * Test product update with nonexistent id
      *
      * @return void
      */

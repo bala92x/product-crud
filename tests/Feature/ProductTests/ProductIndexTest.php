@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 use App\Http\Resources\ProductResources\ProductCollection;
 
-class ProductListTest extends ProductTestCase {
+class ProductIndexTest extends ProductTestCase {
     /**
 	 * All products.
 	 * 
@@ -26,11 +26,11 @@ class ProductListTest extends ProductTestCase {
     }
 	
     /**
-     * Test list all products
+     * Test products index
      *
      * @return void
      */
-    public function testListAllProducts(): void {
+    public function testProductsIndex(): void {
         $route 			= self::BASE_URL;
         $response 		= $this->get($route);
         $expectedJson 	= json_encode(new ProductCollection($this->products));

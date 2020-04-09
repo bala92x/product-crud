@@ -40,9 +40,9 @@ class Product extends Model {
      * @var array
      */
     protected $casts = [
-		'published_at'		=> 'datetime',
-		'published_until'	=> 'datetime',
-		'price' 			=> 'int',
+		'created_at'	=> 'string',
+		'updated_at'	=> 'string',
+		'price' 		=> 'int'
 	];
 
     /**

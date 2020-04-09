@@ -4,13 +4,13 @@ namespace Tests\Feature\ProductTests;
 
 use App\Http\Resources\ProductResources\ProductResource;
 
-class ProductGetTest extends ProductTestCase {
+class ProductShowTest extends ProductTestCase {
     /**
-     * Test get product
+     * Test product show
      *
      * @return void
      */
-    public function testGetProduct(): void {
+    public function testShowProduct(): void {
         $productId		= 1;
         $product		= $this->productService->find($productId);
         $route 			= self::BASE_URL . $productId;
@@ -22,11 +22,11 @@ class ProductGetTest extends ProductTestCase {
     }
 	
     /**
-     * Test get product with nonexistent id
+     * Test product show with nonexistent id
      *
      * @return void
      */
-    public function testGetNonexistentProduct(): void {
+    public function testShowNonexistentProduct(): void {
         $route 			= self::BASE_URL . $this->invalidId;
         $response 		= $this->get($route);
         $expectedJson	= [

@@ -22,8 +22,28 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Language extends Model {
     use SoftDeletes;
 	
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
     protected $table = 'languages';
+	
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+		'created_at'	=> 'string',
+		'updated_at'	=> 'string'
+	];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
 		'name',
 		'code',

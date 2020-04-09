@@ -65,11 +65,11 @@ php artisan serve
 
 ## Endpoints
 
--   List products - `GET /api/products/`
--   Single product - `GET /api/products/:id`
--   Create product - `POST /api/products/` - `Content-Type: form-data`
--   Update product - `POST /api/products/:id` - `Content-Type: form-data`
--   Delete product - `DELETE /api/products/:id`
+-   Products index - `GET /api/products/`
+-   Product store - `POST /api/products/` - `Content-Type: form-data`
+-   Product show - `GET /api/products/:id`
+-   Product update - `POST /api/products/:id` - `Content-Type: form-data`
+-   Product destroy - `DELETE /api/products/:id`
 -   Page not found - `GET /api/404`
 
 ## Examples requests and responses

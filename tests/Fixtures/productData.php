@@ -3,10 +3,10 @@
 use Illuminate\Http\UploadedFile;
 
 return [
-	'productCreateData' 		=> [
+	'productStoreData' 			=> [
 		'publishedAt'			=> '2020-09-20 00:34:42',
 		'publishedUntil'		=> '2020-09-30 00:34:42',
-		'price'					=> '15000',
+		'price'					=> 15000,
 		'image'					=> UploadedFile::fake()->image('image.jpg'),
 		'productTranslations'	=>  [
 			0 => [
@@ -31,7 +31,7 @@ return [
 	'productUpdateData'			=> [
 		'publishedAt'			=> '2021-09-20 00:34:42',
 		'publishedUntil'		=> '2021-09-30 00:34:42',
-		'price'					=> '20000',
+		'price'					=> 20000,
 		'image'					=> UploadedFile::fake()->image('new-image.jpg'),
 		'productTranslations'	=>  [
 			1 => [

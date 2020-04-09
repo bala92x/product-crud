@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "List products",
+			"name": "Products index",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -20,12 +20,11 @@
 						"api",
 						"products"
 					]
-				},
-				"description": "List all products"
+				}
 			},
 			"response": [
 				{
-					"name": "List products",
+					"name": "Products index",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -50,11 +49,11 @@
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:17:09 GMT"
+							"value": "Thu, 09 Apr 2020 15:05:27 GMT"
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:17:09 GMT"
+							"value": "Thu, 09 Apr 2020 15:05:27 GMT"
 						},
 						{
 							"key": "Connection",
@@ -82,173 +81,12 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"sum\": 3,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"publishedAt\": \"2020-01-17T23:00:03.000000Z\",\n            \"publishedUntil\": \"2020-06-02T21:43:18.000000Z\",\n            \"price\": 47600,\n            \"createdAt\": \"2019-09-17T23:05:48.000000Z\",\n            \"updatedAt\": \"2019-11-18T13:22:10.000000Z\",\n            \"productTranslations\": [\n                {\n                    \"id\": 1,\n                    \"languageSlug\": \"hu\",\n                    \"name\": \"Magnam doloremque non est commodi ut cupiditate fugiat ut.\",\n                    \"slug\": \"minus-aut-voluptatum-ut-fugit-doloribus\",\n                    \"description\": \"I almost think I may as well as pigs, and was going a journey, I should think it so quickly that the best thing to nurse--and she's such a capital one for catching mice--oh, I beg your pardon!' said.\",\n                    \"createdAt\": \"2019-12-26T15:17:07.000000Z\",\n                    \"updatedAt\": \"2020-02-27T12:26:27.000000Z\"\n                },\n                {\n                    \"id\": 2,\n                    \"languageSlug\": \"en\",\n                    \"name\": \"Fuga laborum autem laborum autem repellendus ab.\",\n                    \"slug\": \"tempore-tenetur-eligendi-et-voluptate-eveniet-ut-atque\",\n                    \"description\": \"Alice said; but was dreadfully puzzled by the officers of the words don't FIT you,' said Alice, and her eyes filled with cupboards and book-shelves; here and there. There was not a bit hurt, and she.\",\n                    \"createdAt\": \"2019-12-10T10:47:27.000000Z\",\n                    \"updatedAt\": \"2020-02-28T04:40:18.000000Z\"\n                }\n            ],\n            \"productTags\": [\n                {\n                    \"id\": 1,\n                    \"createdAt\": \"2019-12-21T09:47:46.000000Z\",\n                    \"updatedAt\": \"2020-02-11T14:19:19.000000Z\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 1,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"fugiat\",\n                            \"slug\": \"fugiat\",\n                            \"createdAt\": \"2019-12-27T17:57:58.000000Z\",\n                            \"updatedAt\": \"2020-02-12T09:28:26.000000Z\"\n                        },\n                        {\n                            \"id\": 2,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"mollitia\",\n                            \"slug\": \"mollitia\",\n                            \"createdAt\": \"2019-12-26T13:06:12.000000Z\",\n                            \"updatedAt\": \"2020-02-26T15:13:10.000000Z\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 2,\n                    \"createdAt\": \"2019-12-19T10:07:20.000000Z\",\n                    \"updatedAt\": \"2020-02-11T07:14:01.000000Z\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 3,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"non\",\n                            \"slug\": \"non\",\n                            \"createdAt\": \"2019-12-26T14:41:51.000000Z\",\n                            \"updatedAt\": \"2020-02-20T18:21:42.000000Z\"\n                        },\n                        {\n                            \"id\": 4,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"aut\",\n                            \"slug\": \"aut\",\n                            \"createdAt\": \"2019-12-15T04:22:31.000000Z\",\n                            \"updatedAt\": \"2020-03-07T05:53:01.000000Z\"\n                        }\n                    ]\n                }\n            ],\n            \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/1/DapoLSCGG4IrG2SBpy2GZrQ7eHSZKZxsXJX6dgFP.jpeg\"\n        },\n        {\n            \"id\": 2,\n            \"publishedAt\": \"2020-05-08T13:42:59.000000Z\",\n            \"publishedUntil\": \"2020-05-22T07:02:36.000000Z\",\n            \"price\": 45200,\n            \"createdAt\": \"2019-09-19T22:41:01.000000Z\",\n            \"updatedAt\": \"2019-11-14T22:32:44.000000Z\",\n            \"productTranslations\": [\n                {\n                    \"id\": 3,\n                    \"languageSlug\": \"hu\",\n                    \"name\": \"Fugiat quo soluta voluptas fugiat fugit nulla.\",\n                    \"slug\": \"exercitationem-magni-consequatur-et\",\n                    \"description\": \"The jury all brightened up again.) 'Please your Majesty,' said Alice sharply, for she felt sure it would be as well as pigs, and was delighted to find that she had put the Lizard as she spoke, but.\",\n                    \"createdAt\": \"2020-01-03T13:30:11.000000Z\",\n                    \"updatedAt\": \"2020-02-11T11:44:18.000000Z\"\n                },\n                {\n                    \"id\": 4,\n                    \"languageSlug\": \"en\",\n                    \"name\": \"Fugiat ex incidunt animi aliquam nam quasi et.\",\n                    \"slug\": \"quia-iusto-harum-et-quis-omnis-sint-et\",\n                    \"description\": \"I'm a deal faster than it does.' 'Which would NOT be an advantage,' said Alice, 'a great girl like you,' (she might well say this), 'to go on with the end of the court. All this time the Queen put.\",\n                    \"createdAt\": \"2019-12-10T23:51:42.000000Z\",\n                    \"updatedAt\": \"2020-02-21T22:40:14.000000Z\"\n                }\n            ],\n            \"productTags\": [\n                {\n                    \"id\": 2,\n                    \"createdAt\": \"2019-12-19T10:07:20.000000Z\",\n                    \"updatedAt\": \"2020-02-11T07:14:01.000000Z\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 3,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"non\",\n                            \"slug\": \"non\",\n                            \"createdAt\": \"2019-12-26T14:41:51.000000Z\",\n                            \"updatedAt\": \"2020-02-20T18:21:42.000000Z\"\n                        },\n                        {\n                            \"id\": 4,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"aut\",\n                            \"slug\": \"aut\",\n                            \"createdAt\": \"2019-12-15T04:22:31.000000Z\",\n                            \"updatedAt\": \"2020-03-07T05:53:01.000000Z\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 4,\n                    \"createdAt\": \"2019-12-27T21:23:56.000000Z\",\n                    \"updatedAt\": \"2020-02-29T05:48:34.000000Z\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 7,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"et\",\n                            \"slug\": \"et\",\n                            \"createdAt\": \"2020-01-08T07:38:00.000000Z\",\n                            \"updatedAt\": \"2020-03-03T19:18:45.000000Z\"\n                        },\n                        {\n                            \"id\": 8,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"itaque\",\n                            \"slug\": \"itaque\",\n                            \"createdAt\": \"2019-12-26T22:14:57.000000Z\",\n                            \"updatedAt\": \"2020-03-04T02:39:56.000000Z\"\n                        }\n                    ]\n                }\n            ],\n            \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/2/ONLP0731lpccSVHkIDHi19UBKjRgGieHQ68YQH8H.jpeg\"\n        },\n        {\n            \"id\": 3,\n            \"publishedAt\": \"2020-02-01T06:15:04.000000Z\",\n            \"publishedUntil\": \"2020-06-22T11:38:50.000000Z\",\n            \"price\": 5200,\n            \"createdAt\": \"2019-09-30T08:05:44.000000Z\",\n            \"updatedAt\": \"2019-11-22T10:11:54.000000Z\",\n            \"productTranslations\": [\n                {\n                    \"id\": 5,\n                    \"languageSlug\": \"hu\",\n                    \"name\": \"Eligendi cupiditate pariatur est tenetur similique officiis architecto enim.\",\n                    \"slug\": \"voluptas-soluta-et-enim-sit-consequuntur-et\",\n                    \"description\": \"MARMALADE', but to get her head on her hand, and a fan! Quick, now!' And Alice was not here before,' said the March Hare went on. 'I do,' Alice hastily replied; 'at least--at least I mean what I.\",\n                    \"createdAt\": \"2019-12-22T01:05:09.000000Z\",\n                    \"updatedAt\": \"2020-03-02T02:27:12.000000Z\"\n                },\n                {\n                    \"id\": 6,\n                    \"languageSlug\": \"en\",\n                    \"name\": \"Quidem sunt doloremque hic non animi aliquid impedit.\",\n                    \"slug\": \"vitae-labore-repellat-ut-voluptates-sit-cumque\",\n                    \"description\": \"For some minutes the whole head appeared, and then all the while, and fighting for the first minute or two, she made her next remark. 'Then the eleventh day must have prizes.' 'But who has won?'.\",\n                    \"createdAt\": \"2020-01-05T08:11:38.000000Z\",\n                    \"updatedAt\": \"2020-02-25T12:49:49.000000Z\"\n                }\n            ],\n            \"productTags\": [\n                {\n                    \"id\": 3,\n                    \"createdAt\": \"2020-01-08T20:39:58.000000Z\",\n                    \"updatedAt\": \"2020-02-19T13:40:55.000000Z\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 5,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"praesentium\",\n                            \"slug\": \"praesentium\",\n                            \"createdAt\": \"2019-12-22T14:47:39.000000Z\",\n                            \"updatedAt\": \"2020-02-18T17:26:01.000000Z\"\n                        },\n                        {\n                            \"id\": 6,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"rem\",\n                            \"slug\": \"rem\",\n                            \"createdAt\": \"2019-12-12T16:07:28.000000Z\",\n                            \"updatedAt\": \"2020-03-05T13:33:05.000000Z\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 6,\n                    \"createdAt\": \"2019-12-13T02:05:19.000000Z\",\n                    \"updatedAt\": \"2020-02-25T05:07:36.000000Z\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 11,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"sunt\",\n                            \"slug\": \"sunt\",\n                            \"createdAt\": \"2020-01-02T19:09:52.000000Z\",\n                            \"updatedAt\": \"2020-03-05T10:35:54.000000Z\"\n                        },\n                        {\n                            \"id\": 12,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"possimus\",\n                            \"slug\": \"possimus\",\n                            \"createdAt\": \"2019-12-24T00:40:38.000000Z\",\n                            \"updatedAt\": \"2020-02-28T19:29:17.000000Z\"\n                        }\n                    ]\n                }\n            ],\n            \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/3/PxjO5OBGvmMGEr8CI2OyaRvRZvBHcvFzEeaaKbiM.jpeg\"\n        }\n    ]\n}"
+					"body": "{\n    \"sum\": 3,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"publishedAt\": \"2020-04-20 00:37:15\",\n            \"publishedUntil\": \"2020-07-08 13:51:00\",\n            \"price\": 13600,\n            \"createdAt\": \"2019-10-04 04:03:39\",\n            \"updatedAt\": \"2019-11-23 09:20:02\",\n            \"productTranslations\": [\n                {\n                    \"id\": 1,\n                    \"languageSlug\": \"hu\",\n                    \"name\": \"Et impedit quo voluptatum voluptates unde recusandae esse.\",\n                    \"slug\": \"sed-ut-vel-asperiores-molestiae-sed-ullam-unde\",\n                    \"description\": \"Rabbit say to itself, 'Oh dear! Oh dear! I shall see it quite plainly through the neighbouring pool--she could hear the very tones of her ever getting out of THIS!' (Sounds of more energetic.\",\n                    \"createdAt\": \"2020-01-06 19:58:03\",\n                    \"updatedAt\": \"2020-02-15 09:06:17\"\n                },\n                {\n                    \"id\": 2,\n                    \"languageSlug\": \"en\",\n                    \"name\": \"Quis maxime similique omnis id est aut ipsam.\",\n                    \"slug\": \"et-labore-corporis-ducimus-mollitia\",\n                    \"description\": \"The Gryphon sat up and said, very gravely, 'I think, you ought to have changed since her swim in the sky. Twinkle, twinkle--\\\"' Here the other side of the well, and noticed that they couldn't see.\",\n                    \"createdAt\": \"2019-12-13 21:30:55\",\n                    \"updatedAt\": \"2020-02-22 23:11:12\"\n                }\n            ],\n            \"productTags\": [\n                {\n                    \"id\": 1,\n                    \"createdAt\": \"2019-12-30 04:31:38\",\n                    \"updatedAt\": \"2020-03-03 19:55:50\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 1,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"ipsam\",\n                            \"slug\": \"ipsam\",\n                            \"createdAt\": \"2019-12-22 00:32:38\",\n                            \"updatedAt\": \"2020-02-26 16:01:51\"\n                        },\n                        {\n                            \"id\": 2,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"maiores\",\n                            \"slug\": \"maiores\",\n                            \"createdAt\": \"2019-12-31 06:35:52\",\n                            \"updatedAt\": \"2020-02-11 06:46:13\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 2,\n                    \"createdAt\": \"2019-12-16 09:26:55\",\n                    \"updatedAt\": \"2020-02-11 21:12:43\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 3,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"quia\",\n                            \"slug\": \"quia\",\n                            \"createdAt\": \"2019-12-14 20:12:00\",\n                            \"updatedAt\": \"2020-02-10 03:18:07\"\n                        },\n                        {\n                            \"id\": 4,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"error\",\n                            \"slug\": \"error\",\n                            \"createdAt\": \"2019-12-29 02:55:57\",\n                            \"updatedAt\": \"2020-02-16 18:03:47\"\n                        }\n                    ]\n                }\n            ],\n            \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/1/YNoLNSV4ircyC4m9EGAWhEZF4owbAnVu7RfkyjzE.jpeg\"\n        },\n        {\n            \"id\": 2,\n            \"publishedAt\": \"2020-03-16 16:38:38\",\n            \"publishedUntil\": \"2020-06-27 07:06:18\",\n            \"price\": 23800,\n            \"createdAt\": \"2019-09-24 16:46:40\",\n            \"updatedAt\": \"2019-11-16 12:47:57\",\n            \"productTranslations\": [\n                {\n                    \"id\": 3,\n                    \"languageSlug\": \"hu\",\n                    \"name\": \"Omnis omnis nesciunt doloribus et quo possimus neque.\",\n                    \"slug\": \"dolore-suscipit-necessitatibus-illum-dicta-velit-non-maiores\",\n                    \"description\": \"I should be raving mad after all! I almost wish I'd gone to see it pop down a large arm-chair at one end to the seaside once in the air. '--as far out to sea. So they couldn't get them out with.\",\n                    \"createdAt\": \"2019-12-24 04:26:47\",\n                    \"updatedAt\": \"2020-03-08 07:31:52\"\n                },\n                {\n                    \"id\": 4,\n                    \"languageSlug\": \"en\",\n                    \"name\": \"Tempora nulla eos qui iure.\",\n                    \"slug\": \"et-mollitia-sapiente-totam-voluptas\",\n                    \"description\": \"Let me see: four times six is thirteen, and four times six is thirteen, and four times seven is--oh dear! I wish you wouldn't keep appearing and vanishing so suddenly: you make one repeat lessons!'.\",\n                    \"createdAt\": \"2019-12-21 01:55:23\",\n                    \"updatedAt\": \"2020-02-28 00:27:11\"\n                }\n            ],\n            \"productTags\": [\n                {\n                    \"id\": 2,\n                    \"createdAt\": \"2019-12-16 09:26:55\",\n                    \"updatedAt\": \"2020-02-11 21:12:43\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 3,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"quia\",\n                            \"slug\": \"quia\",\n                            \"createdAt\": \"2019-12-14 20:12:00\",\n                            \"updatedAt\": \"2020-02-10 03:18:07\"\n                        },\n                        {\n                            \"id\": 4,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"error\",\n                            \"slug\": \"error\",\n                            \"createdAt\": \"2019-12-29 02:55:57\",\n                            \"updatedAt\": \"2020-02-16 18:03:47\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 4,\n                    \"createdAt\": \"2019-12-11 14:50:10\",\n                    \"updatedAt\": \"2020-02-11 07:46:39\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 7,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"consequatur\",\n                            \"slug\": \"consequatur\",\n                            \"createdAt\": \"2019-12-11 10:07:03\",\n                            \"updatedAt\": \"2020-02-11 12:14:13\"\n                        },\n                        {\n                            \"id\": 8,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"itaque\",\n                            \"slug\": \"itaque\",\n                            \"createdAt\": \"2019-12-23 16:38:33\",\n                            \"updatedAt\": \"2020-03-05 09:14:21\"\n                        }\n                    ]\n                }\n            ],\n            \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/2/dDxoGtWC17vgaZjIzsnhwHscuFm8Fa5r881dffCC.jpeg\"\n        },\n        {\n            \"id\": 3,\n            \"publishedAt\": \"2020-01-16 23:04:42\",\n            \"publishedUntil\": \"2020-07-08 00:12:35\",\n            \"price\": 27400,\n            \"createdAt\": \"2019-10-05 10:47:51\",\n            \"updatedAt\": \"2019-12-05 01:54:47\",\n            \"productTranslations\": [\n                {\n                    \"id\": 5,\n                    \"languageSlug\": \"hu\",\n                    \"name\": \"Nemo quibusdam corporis iusto alias est sed molestiae.\",\n                    \"slug\": \"nostrum-repellat-voluptatem-unde-omnis-laboriosam-quisquam\",\n                    \"description\": \"Duchess said after a few minutes, and began to cry again. 'You ought to be no use now,' thought poor Alice, 'to pretend to be executed for having cheated herself in a low, timid voice, 'If you.\",\n                    \"createdAt\": \"2020-01-03 07:51:10\",\n                    \"updatedAt\": \"2020-02-17 07:54:43\"\n                },\n                {\n                    \"id\": 6,\n                    \"languageSlug\": \"en\",\n                    \"name\": \"Non fugiat est aperiam libero.\",\n                    \"slug\": \"libero-qui-quo-nobis-quisquam-a-cumque-eius\",\n                    \"description\": \"Mock Turtle said: 'advance twice, set to work very carefully, nibbling first at one end to the Dormouse, who seemed too much frightened to say when I find a number of bathing machines in the.\",\n                    \"createdAt\": \"2019-12-28 11:21:36\",\n                    \"updatedAt\": \"2020-02-15 12:29:20\"\n                }\n            ],\n            \"productTags\": [\n                {\n                    \"id\": 3,\n                    \"createdAt\": \"2019-12-22 06:23:57\",\n                    \"updatedAt\": \"2020-02-15 11:49:05\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 5,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"nisi\",\n                            \"slug\": \"nisi\",\n                            \"createdAt\": \"2019-12-14 13:33:54\",\n                            \"updatedAt\": \"2020-03-03 07:16:18\"\n                        },\n                        {\n                            \"id\": 6,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"omnis\",\n                            \"slug\": \"omnis\",\n                            \"createdAt\": \"2020-01-04 04:30:20\",\n                            \"updatedAt\": \"2020-02-22 04:55:51\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 6,\n                    \"createdAt\": \"2019-12-25 04:26:18\",\n                    \"updatedAt\": \"2020-02-20 21:04:36\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 11,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"id\",\n                            \"slug\": \"id\",\n                            \"createdAt\": \"2020-01-08 03:53:50\",\n                            \"updatedAt\": \"2020-02-17 00:33:17\"\n                        },\n                        {\n                            \"id\": 12,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"dignissimos\",\n                            \"slug\": \"dignissimos\",\n                            \"createdAt\": \"2019-12-10 10:36:00\",\n                            \"updatedAt\": \"2020-02-19 10:55:58\"\n                        }\n                    ]\n                }\n            ],\n            \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/3/va46dgOyblQSDbpL0OXapI8XPwEC7LhwwfMCEcoe.jpeg\"\n        }\n    ]\n}"
 				}
 			]
 		},
 		{
-			"name": "Single product",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/api/products/:id",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"api",
-						"products",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "3"
-						}
-					]
-				},
-				"description": "Get a single product"
-			},
-			"response": [
-				{
-					"name": "Product not found",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/api/products/:id",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"products",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "1000"
-								}
-							]
-						}
-					},
-					"status": "Not Found",
-					"code": 404,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 08 Apr 2020 20:05:43 GMT"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 08 Apr 2020 20:05:43 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/7.3.11"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "X-RateLimit-Limit",
-							"value": "60"
-						},
-						{
-							"key": "X-RateLimit-Remaining",
-							"value": "59"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"This product could not be found.\"\n}"
-				},
-				{
-					"name": "Single product",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/api/products/:id",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"api",
-								"products",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "3"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Host",
-							"value": "127.0.0.1:8000"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 08 Apr 2020 19:49:03 GMT"
-						},
-						{
-							"key": "Date",
-							"value": "Wed, 08 Apr 2020 19:49:03 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "close"
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "PHP/7.3.11"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache, private"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "X-RateLimit-Limit",
-							"value": "60"
-						},
-						{
-							"key": "X-RateLimit-Remaining",
-							"value": "58"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"publishedAt\": \"2020-01-30T14:41:03.000000Z\",\n        \"publishedUntil\": \"2020-06-03T22:50:39.000000Z\",\n        \"price\": 7500,\n        \"createdAt\": \"2019-09-09T17:56:08.000000Z\",\n        \"updatedAt\": \"2019-11-27T05:55:02.000000Z\",\n        \"productTranslations\": [\n            {\n                \"id\": 5,\n                \"languageSlug\": \"hu\",\n                \"name\": \"Enim nesciunt deleniti ut suscipit ut.\",\n                \"slug\": \"dolorem-tenetur-sint-ipsam-est-reprehenderit-reprehenderit-dolor\",\n                \"description\": \"Alice was very nearly in the chimney close above her: then, saying to her usual height. It was opened by another footman in livery, with a round face, and large eyes full of smoke from one of the.\",\n                \"createdAt\": \"2020-01-07T23:28:58.000000Z\",\n                \"updatedAt\": \"2020-02-15T14:25:16.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"languageSlug\": \"en\",\n                \"name\": \"Animi consequuntur aut quisquam nihil quos.\",\n                \"slug\": \"nobis-amet-at-sed-debitis-quia-quia-deserunt\",\n                \"description\": \"But the insolence of his head. But at any rate, the Dormouse crossed the court, by the Queen never left off when they liked, so that altogether, for the garden!' and she dropped it hastily, just in.\",\n                \"createdAt\": \"2019-12-24T23:10:51.000000Z\",\n                \"updatedAt\": \"2020-02-09T15:32:06.000000Z\"\n            }\n        ],\n        \"productTags\": [\n            {\n                \"id\": 3,\n                \"createdAt\": \"2019-12-14T23:21:49.000000Z\",\n                \"updatedAt\": \"2020-02-24T03:51:54.000000Z\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 5,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"molestiae\",\n                        \"slug\": \"molestiae\",\n                        \"createdAt\": \"2019-12-21T00:38:13.000000Z\",\n                        \"updatedAt\": \"2020-02-19T09:18:01.000000Z\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"assumenda\",\n                        \"slug\": \"assumenda\",\n                        \"createdAt\": \"2019-12-16T14:17:47.000000Z\",\n                        \"updatedAt\": \"2020-02-20T13:07:53.000000Z\"\n                    }\n                ]\n            },\n            {\n                \"id\": 6,\n                \"createdAt\": \"2019-12-27T06:54:49.000000Z\",\n                \"updatedAt\": \"2020-02-08T22:47:33.000000Z\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 11,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"quia\",\n                        \"slug\": \"quia\",\n                        \"createdAt\": \"2020-01-04T02:49:59.000000Z\",\n                        \"updatedAt\": \"2020-02-17T06:05:01.000000Z\"\n                    },\n                    {\n                        \"id\": 12,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"culpa\",\n                        \"slug\": \"culpa\",\n                        \"createdAt\": \"2019-12-25T19:23:47.000000Z\",\n                        \"updatedAt\": \"2020-02-14T03:51:44.000000Z\"\n                    }\n                ]\n            }\n        ],\n        \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/3/QfuaU6FCNFV9lNdtzgzzjdPXWOG5mTJDsB5u6D5W.jpeg\"\n    }\n}"
-				}
-			]
-		},
-		{
-			"name": "Create product",
+			"name": "Product store",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -294,7 +132,7 @@
 						},
 						{
 							"key": "productTranslations[0][description]",
-							"value": "<b>Különleges minőségű</b> tejsavófehérje izolátum, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.",
+							"value": "<b>Különleges minőségű</b> tejsavófehérje, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.",
 							"type": "text"
 						},
 						{
@@ -353,7 +191,7 @@
 			},
 			"response": [
 				{
-					"name": "Create product",
+					"name": "Product store",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
@@ -399,7 +237,7 @@
 								},
 								{
 									"key": "productTranslations[0][description]",
-									"value": "<b>Különleges minőségű</b> tejsavófehérje izolátum, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.",
+									"value": "<b>Különleges minőségű</b> tejsavófehérje, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.",
 									"type": "text"
 								},
 								{
@@ -465,11 +303,172 @@
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:22:24 GMT"
+							"value": "Thu, 09 Apr 2020 15:06:09 GMT"
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:22:24 GMT"
+							"value": "Thu, 09 Apr 2020 15:06:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"publishedAt\": \"2020-09-20 00:34:42\",\n        \"publishedUntil\": \"2020-09-30 00:34:42\",\n        \"price\": 15000,\n        \"createdAt\": \"2020-04-09 17:06:08\",\n        \"updatedAt\": \"2020-04-09 17:06:08\",\n        \"productTranslations\": [\n            {\n                \"id\": 7,\n                \"languageSlug\": \"hu\",\n                \"name\": \"100% Tejsavó fehérje\",\n                \"slug\": \"tejsavo-feherje\",\n                \"description\": \"<b>Különleges minőségű</b> tejsavófehérje, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.\",\n                \"createdAt\": \"2020-04-09 17:06:08\",\n                \"updatedAt\": \"2020-04-09 17:06:08\"\n            },\n            {\n                \"id\": 8,\n                \"languageSlug\": \"en\",\n                \"name\": \"100% Whey Protein\",\n                \"slug\": \"whey-protein\",\n                \"description\": \"<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.\",\n                \"createdAt\": \"2020-04-09 17:06:08\",\n                \"updatedAt\": \"2020-04-09 17:06:08\"\n            }\n        ],\n        \"productTags\": [\n            {\n                \"id\": 1,\n                \"createdAt\": \"2019-12-30 04:31:38\",\n                \"updatedAt\": \"2020-03-03 19:55:50\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 1,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"ipsam\",\n                        \"slug\": \"ipsam\",\n                        \"createdAt\": \"2019-12-22 00:32:38\",\n                        \"updatedAt\": \"2020-02-26 16:01:51\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"maiores\",\n                        \"slug\": \"maiores\",\n                        \"createdAt\": \"2019-12-31 06:35:52\",\n                        \"updatedAt\": \"2020-02-11 06:46:13\"\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"createdAt\": \"2019-12-16 09:26:55\",\n                \"updatedAt\": \"2020-02-11 21:12:43\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 3,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"quia\",\n                        \"slug\": \"quia\",\n                        \"createdAt\": \"2019-12-14 20:12:00\",\n                        \"updatedAt\": \"2020-02-10 03:18:07\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"error\",\n                        \"slug\": \"error\",\n                        \"createdAt\": \"2019-12-29 02:55:57\",\n                        \"updatedAt\": \"2020-02-16 18:03:47\"\n                    }\n                ]\n            },\n            {\n                \"id\": 3,\n                \"createdAt\": \"2019-12-22 06:23:57\",\n                \"updatedAt\": \"2020-02-15 11:49:05\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 5,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"nisi\",\n                        \"slug\": \"nisi\",\n                        \"createdAt\": \"2019-12-14 13:33:54\",\n                        \"updatedAt\": \"2020-03-03 07:16:18\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"omnis\",\n                        \"slug\": \"omnis\",\n                        \"createdAt\": \"2020-01-04 04:30:20\",\n                        \"updatedAt\": \"2020-02-22 04:55:51\"\n                    }\n                ]\n            }\n        ],\n        \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/4/postman-test-image.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Product show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/products/:productId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Get a single product"
+			},
+			"response": [
+				{
+					"name": "Product not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/:productId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "not-a-number"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:53 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This product could not be found.\"\n}"
+				},
+				{
+					"name": "Product show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/:productId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:31 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:31 GMT"
 						},
 						{
 							"key": "Connection",
@@ -497,26 +496,33 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"publishedAt\": \"2020-09-19T22:34:42.000000Z\",\n        \"publishedUntil\": \"2020-09-29T22:34:42.000000Z\",\n        \"price\": 15000,\n        \"createdAt\": \"2020-04-08T22:22:23.000000Z\",\n        \"updatedAt\": \"2020-04-08T22:22:24.000000Z\",\n        \"productTranslations\": [\n            {\n                \"id\": 7,\n                \"languageSlug\": \"hu\",\n                \"name\": \"100% Tejsavó fehérje\",\n                \"slug\": \"tejsavo-feherje\",\n                \"description\": \"<b>Különleges minőségű</b> tejsavófehérje izolátum, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.\",\n                \"createdAt\": \"2020-04-08T22:22:24.000000Z\",\n                \"updatedAt\": \"2020-04-08T22:22:24.000000Z\"\n            },\n            {\n                \"id\": 8,\n                \"languageSlug\": \"en\",\n                \"name\": \"100% Whey Protein\",\n                \"slug\": \"whey-protein\",\n                \"description\": \"<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.\",\n                \"createdAt\": \"2020-04-08T22:22:24.000000Z\",\n                \"updatedAt\": \"2020-04-08T22:22:24.000000Z\"\n            }\n        ],\n        \"productTags\": [\n            {\n                \"id\": 1,\n                \"createdAt\": \"2019-12-21T09:47:46.000000Z\",\n                \"updatedAt\": \"2020-02-11T14:19:19.000000Z\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 1,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"fugiat\",\n                        \"slug\": \"fugiat\",\n                        \"createdAt\": \"2019-12-27T17:57:58.000000Z\",\n                        \"updatedAt\": \"2020-02-12T09:28:26.000000Z\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"mollitia\",\n                        \"slug\": \"mollitia\",\n                        \"createdAt\": \"2019-12-26T13:06:12.000000Z\",\n                        \"updatedAt\": \"2020-02-26T15:13:10.000000Z\"\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"createdAt\": \"2019-12-19T10:07:20.000000Z\",\n                \"updatedAt\": \"2020-02-11T07:14:01.000000Z\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 3,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"non\",\n                        \"slug\": \"non\",\n                        \"createdAt\": \"2019-12-26T14:41:51.000000Z\",\n                        \"updatedAt\": \"2020-02-20T18:21:42.000000Z\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"aut\",\n                        \"slug\": \"aut\",\n                        \"createdAt\": \"2019-12-15T04:22:31.000000Z\",\n                        \"updatedAt\": \"2020-03-07T05:53:01.000000Z\"\n                    }\n                ]\n            },\n            {\n                \"id\": 3,\n                \"createdAt\": \"2020-01-08T20:39:58.000000Z\",\n                \"updatedAt\": \"2020-02-19T13:40:55.000000Z\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 5,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"praesentium\",\n                        \"slug\": \"praesentium\",\n                        \"createdAt\": \"2019-12-22T14:47:39.000000Z\",\n                        \"updatedAt\": \"2020-02-18T17:26:01.000000Z\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"rem\",\n                        \"slug\": \"rem\",\n                        \"createdAt\": \"2019-12-12T16:07:28.000000Z\",\n                        \"updatedAt\": \"2020-03-05T13:33:05.000000Z\"\n                    }\n                ]\n            }\n        ],\n        \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/4/postman-test-image.jpg\"\n    }\n}"
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"publishedAt\": \"2020-04-20 00:37:15\",\n        \"publishedUntil\": \"2020-07-08 13:51:00\",\n        \"price\": 13600,\n        \"createdAt\": \"2019-10-04 04:03:39\",\n        \"updatedAt\": \"2019-11-23 09:20:02\",\n        \"productTranslations\": [\n            {\n                \"id\": 1,\n                \"languageSlug\": \"hu\",\n                \"name\": \"Et impedit quo voluptatum voluptates unde recusandae esse.\",\n                \"slug\": \"sed-ut-vel-asperiores-molestiae-sed-ullam-unde\",\n                \"description\": \"Rabbit say to itself, 'Oh dear! Oh dear! I shall see it quite plainly through the neighbouring pool--she could hear the very tones of her ever getting out of THIS!' (Sounds of more energetic.\",\n                \"createdAt\": \"2020-01-06 19:58:03\",\n                \"updatedAt\": \"2020-02-15 09:06:17\"\n            },\n            {\n                \"id\": 2,\n                \"languageSlug\": \"en\",\n                \"name\": \"Quis maxime similique omnis id est aut ipsam.\",\n                \"slug\": \"et-labore-corporis-ducimus-mollitia\",\n                \"description\": \"The Gryphon sat up and said, very gravely, 'I think, you ought to have changed since her swim in the sky. Twinkle, twinkle--\\\"' Here the other side of the well, and noticed that they couldn't see.\",\n                \"createdAt\": \"2019-12-13 21:30:55\",\n                \"updatedAt\": \"2020-02-22 23:11:12\"\n            }\n        ],\n        \"productTags\": [\n            {\n                \"id\": 1,\n                \"createdAt\": \"2019-12-30 04:31:38\",\n                \"updatedAt\": \"2020-03-03 19:55:50\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 1,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"ipsam\",\n                        \"slug\": \"ipsam\",\n                        \"createdAt\": \"2019-12-22 00:32:38\",\n                        \"updatedAt\": \"2020-02-26 16:01:51\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"maiores\",\n                        \"slug\": \"maiores\",\n                        \"createdAt\": \"2019-12-31 06:35:52\",\n                        \"updatedAt\": \"2020-02-11 06:46:13\"\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"createdAt\": \"2019-12-16 09:26:55\",\n                \"updatedAt\": \"2020-02-11 21:12:43\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 3,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"quia\",\n                        \"slug\": \"quia\",\n                        \"createdAt\": \"2019-12-14 20:12:00\",\n                        \"updatedAt\": \"2020-02-10 03:18:07\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"error\",\n                        \"slug\": \"error\",\n                        \"createdAt\": \"2019-12-29 02:55:57\",\n                        \"updatedAt\": \"2020-02-16 18:03:47\"\n                    }\n                ]\n            }\n        ],\n        \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/1/YNoLNSV4ircyC4m9EGAWhEZF4owbAnVu7RfkyjzE.jpeg\"\n    }\n}"
 				}
 			]
 		},
 		{
-			"name": "Update product",
+			"name": "Product update",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "formdata",
 					"formdata": [
 						{
 							"key": "publishedAt",
-							"value": "2021-08-30 00:34:42",
+							"value": "2021-09-11 00:34:42",
 							"type": "text"
 						},
 						{
 							"key": "publishedUntil",
-							"value": "2021-09-30 00:34:42",
+							"value": "2021-09-21 00:34:42",
 							"type": "text"
 						},
 						{
@@ -553,19 +559,19 @@
 						},
 						{
 							"key": "productTranslations[1][name]",
-							"value": "100% Whey Protein",
+							"value": "100% Isolated Whey Protein",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "productTranslations[1][slug]",
-							"value": "whey-protein",
+							"value": "isolated- whey-protein",
 							"type": "text",
 							"disabled": true
 						},
 						{
 							"key": "productTranslations[1][description]",
-							"value": "<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
+							"value": "<b>Special quality</b> whey isolated protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
 							"type": "text",
 							"disabled": true
 						},
@@ -592,19 +598,19 @@
 					]
 				},
 				"url": {
-					"raw": "{{url}}/api/products/:id",
+					"raw": "{{url}}/api/products/:productId",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"products",
-						":id"
+						":productId"
 					],
 					"variable": [
 						{
-							"key": "id",
-							"value": "3"
+							"key": "productId",
+							"value": "4"
 						}
 					]
 				},
@@ -615,18 +621,25 @@
 					"name": "Product not found",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
 									"key": "publishedAt",
-									"value": "2021-08-30 00:34:42",
+									"value": "2021-09-11 00:34:42",
 									"type": "text"
 								},
 								{
 									"key": "publishedUntil",
-									"value": "2021-09-30 00:34:42",
+									"value": "2021-09-21 00:34:42",
 									"type": "text"
 								},
 								{
@@ -663,19 +676,19 @@
 								},
 								{
 									"key": "productTranslations[1][name]",
-									"value": "100% Whey Protein",
+									"value": "100% Isolated Whey Protein",
 									"type": "text",
 									"disabled": true
 								},
 								{
 									"key": "productTranslations[1][slug]",
-									"value": "whey-protein",
+									"value": "isolated- whey-protein",
 									"type": "text",
 									"disabled": true
 								},
 								{
 									"key": "productTranslations[1][description]",
-									"value": "<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
+									"value": "<b>Special quality</b> whey isolated protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
 									"type": "text",
 									"disabled": true
 								},
@@ -702,18 +715,18 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/api/products/:id",
+							"raw": "{{url}}/api/products/:productId",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"products",
-								":id"
+								":productId"
 							],
 							"variable": [
 								{
-									"key": "id",
+									"key": "productId",
 									"value": "not-a-number"
 								}
 							]
@@ -729,11 +742,11 @@
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:26:30 GMT"
+							"value": "Thu, 09 Apr 2020 15:07:38 GMT"
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:26:30 GMT"
+							"value": "Thu, 09 Apr 2020 15:07:38 GMT"
 						},
 						{
 							"key": "Connection",
@@ -764,21 +777,28 @@
 					"body": "{\n    \"message\": \"This product could not be found.\"\n}"
 				},
 				{
-					"name": "Update product",
+					"name": "Product update",
 					"originalRequest": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
 									"key": "publishedAt",
-									"value": "2021-08-30 00:34:42",
+									"value": "2021-09-11 00:34:42",
 									"type": "text"
 								},
 								{
 									"key": "publishedUntil",
-									"value": "2021-09-30 00:34:42",
+									"value": "2021-09-21 00:34:42",
 									"type": "text"
 								},
 								{
@@ -815,19 +835,19 @@
 								},
 								{
 									"key": "productTranslations[1][name]",
-									"value": "100% Whey Protein",
+									"value": "100% Isolated Whey Protein",
 									"type": "text",
 									"disabled": true
 								},
 								{
 									"key": "productTranslations[1][slug]",
-									"value": "whey-protein",
+									"value": "isolated- whey-protein",
 									"type": "text",
 									"disabled": true
 								},
 								{
 									"key": "productTranslations[1][description]",
-									"value": "<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
+									"value": "<b>Special quality</b> whey isolated protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
 									"type": "text",
 									"disabled": true
 								},
@@ -854,19 +874,19 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/api/products/:id",
+							"raw": "{{url}}/api/products/:productId",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"products",
-								":id"
+								":productId"
 							],
 							"variable": [
 								{
-									"key": "id",
-									"value": "3"
+									"key": "productId",
+									"value": "4"
 								}
 							]
 						}
@@ -881,11 +901,11 @@
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:25:20 GMT"
+							"value": "Thu, 09 Apr 2020 15:07:07 GMT"
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:25:20 GMT"
+							"value": "Thu, 09 Apr 2020 15:07:07 GMT"
 						},
 						{
 							"key": "Connection",
@@ -909,33 +929,33 @@
 						},
 						{
 							"key": "X-RateLimit-Remaining",
-							"value": "59"
+							"value": "56"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"publishedAt\": \"2021-08-29T22:34:42.000000Z\",\n        \"publishedUntil\": \"2021-09-29T22:34:42.000000Z\",\n        \"price\": 20000,\n        \"createdAt\": \"2019-09-30T08:05:44.000000Z\",\n        \"updatedAt\": \"2020-04-08T22:25:19.000000Z\",\n        \"productTranslations\": [\n            {\n                \"id\": 5,\n                \"languageSlug\": \"hu\",\n                \"name\": \"100% Izolált tejsavó fehérje\",\n                \"slug\": \"izolalt-tejsavo-feherje\",\n                \"description\": \"MARMALADE', but to get her head on her hand, and a fan! Quick, now!' And Alice was not here before,' said the March Hare went on. 'I do,' Alice hastily replied; 'at least--at least I mean what I.\",\n                \"createdAt\": \"2019-12-22T01:05:09.000000Z\",\n                \"updatedAt\": \"2020-04-08T22:25:20.000000Z\"\n            },\n            {\n                \"id\": 6,\n                \"languageSlug\": \"en\",\n                \"name\": \"Quidem sunt doloremque hic non animi aliquid impedit.\",\n                \"slug\": \"vitae-labore-repellat-ut-voluptates-sit-cumque\",\n                \"description\": \"For some minutes the whole head appeared, and then all the while, and fighting for the first minute or two, she made her next remark. 'Then the eleventh day must have prizes.' 'But who has won?'.\",\n                \"createdAt\": \"2020-01-05T08:11:38.000000Z\",\n                \"updatedAt\": \"2020-02-25T12:49:49.000000Z\"\n            }\n        ],\n        \"productTags\": [\n            {\n                \"id\": 3,\n                \"createdAt\": \"2020-01-08T20:39:58.000000Z\",\n                \"updatedAt\": \"2020-02-19T13:40:55.000000Z\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 5,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"praesentium\",\n                        \"slug\": \"praesentium\",\n                        \"createdAt\": \"2019-12-22T14:47:39.000000Z\",\n                        \"updatedAt\": \"2020-02-18T17:26:01.000000Z\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"rem\",\n                        \"slug\": \"rem\",\n                        \"createdAt\": \"2019-12-12T16:07:28.000000Z\",\n                        \"updatedAt\": \"2020-03-05T13:33:05.000000Z\"\n                    }\n                ]\n            },\n            {\n                \"id\": 5,\n                \"createdAt\": \"2019-12-24T03:40:50.000000Z\",\n                \"updatedAt\": \"2020-02-09T12:10:20.000000Z\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 9,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"corrupti\",\n                        \"slug\": \"corrupti\",\n                        \"createdAt\": \"2019-12-28T08:02:58.000000Z\",\n                        \"updatedAt\": \"2020-02-13T17:23:59.000000Z\"\n                    },\n                    {\n                        \"id\": 10,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"sed\",\n                        \"slug\": \"sed\",\n                        \"createdAt\": \"2019-12-20T07:27:41.000000Z\",\n                        \"updatedAt\": \"2020-03-05T04:37:10.000000Z\"\n                    }\n                ]\n            },\n            {\n                \"id\": 6,\n                \"createdAt\": \"2019-12-13T02:05:19.000000Z\",\n                \"updatedAt\": \"2020-02-25T05:07:36.000000Z\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 11,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"sunt\",\n                        \"slug\": \"sunt\",\n                        \"createdAt\": \"2020-01-02T19:09:52.000000Z\",\n                        \"updatedAt\": \"2020-03-05T10:35:54.000000Z\"\n                    },\n                    {\n                        \"id\": 12,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"possimus\",\n                        \"slug\": \"possimus\",\n                        \"createdAt\": \"2019-12-24T00:40:38.000000Z\",\n                        \"updatedAt\": \"2020-02-28T19:29:17.000000Z\"\n                    }\n                ]\n            }\n        ],\n        \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/3/postman-test-image2.jpg\"\n    }\n}"
+					"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"publishedAt\": \"2021-09-11 00:34:42\",\n        \"publishedUntil\": \"2021-09-21 00:34:42\",\n        \"price\": 20000,\n        \"createdAt\": \"2020-04-09 17:06:08\",\n        \"updatedAt\": \"2020-04-09 17:07:07\",\n        \"productTranslations\": [\n            {\n                \"id\": 7,\n                \"languageSlug\": \"hu\",\n                \"name\": \"100% Izolált tejsavó fehérje\",\n                \"slug\": \"izolalt-tejsavo-feherje\",\n                \"description\": \"<b>Különleges minőségű</b> tejsavófehérje, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.\",\n                \"createdAt\": \"2020-04-09 17:06:08\",\n                \"updatedAt\": \"2020-04-09 17:07:07\"\n            },\n            {\n                \"id\": 8,\n                \"languageSlug\": \"en\",\n                \"name\": \"100% Whey Protein\",\n                \"slug\": \"whey-protein\",\n                \"description\": \"<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.\",\n                \"createdAt\": \"2020-04-09 17:06:08\",\n                \"updatedAt\": \"2020-04-09 17:06:08\"\n            }\n        ],\n        \"productTags\": [\n            {\n                \"id\": 3,\n                \"createdAt\": \"2019-12-22 06:23:57\",\n                \"updatedAt\": \"2020-02-15 11:49:05\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 5,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"nisi\",\n                        \"slug\": \"nisi\",\n                        \"createdAt\": \"2019-12-14 13:33:54\",\n                        \"updatedAt\": \"2020-03-03 07:16:18\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"omnis\",\n                        \"slug\": \"omnis\",\n                        \"createdAt\": \"2020-01-04 04:30:20\",\n                        \"updatedAt\": \"2020-02-22 04:55:51\"\n                    }\n                ]\n            },\n            {\n                \"id\": 5,\n                \"createdAt\": \"2019-12-13 21:56:58\",\n                \"updatedAt\": \"2020-03-09 09:11:34\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 9,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"dolor\",\n                        \"slug\": \"dolor\",\n                        \"createdAt\": \"2020-01-08 12:06:11\",\n                        \"updatedAt\": \"2020-03-08 20:21:47\"\n                    },\n                    {\n                        \"id\": 10,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"voluptatem\",\n                        \"slug\": \"voluptatem\",\n                        \"createdAt\": \"2019-12-16 21:05:08\",\n                        \"updatedAt\": \"2020-02-22 16:03:13\"\n                    }\n                ]\n            },\n            {\n                \"id\": 6,\n                \"createdAt\": \"2019-12-25 04:26:18\",\n                \"updatedAt\": \"2020-02-20 21:04:36\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 11,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"id\",\n                        \"slug\": \"id\",\n                        \"createdAt\": \"2020-01-08 03:53:50\",\n                        \"updatedAt\": \"2020-02-17 00:33:17\"\n                    },\n                    {\n                        \"id\": 12,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"dignissimos\",\n                        \"slug\": \"dignissimos\",\n                        \"createdAt\": \"2019-12-10 10:36:00\",\n                        \"updatedAt\": \"2020-02-19 10:55:58\"\n                    }\n                ]\n            }\n        ],\n        \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/4/postman-test-image2.jpg\"\n    }\n}"
 				}
 			]
 		},
 		{
-			"name": "Delete product",
+			"name": "Product destroy",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/products/:id",
+					"raw": "{{url}}/api/products/:productId",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"api",
 						"products",
-						":id"
+						":productId"
 					],
 					"variable": [
 						{
-							"key": "id",
-							"value": "3"
+							"key": "productId",
+							"value": "1"
 						}
 					]
 				},
@@ -948,18 +968,18 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products/:id",
+							"raw": "{{url}}/api/products/:productId",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"products",
-								":id"
+								":productId"
 							],
 							"variable": [
 								{
-									"key": "id",
+									"key": "productId",
 									"value": "not-a-number"
 								}
 							]
@@ -975,11 +995,11 @@
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:27:20 GMT"
+							"value": "Thu, 09 Apr 2020 15:10:37 GMT"
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:27:20 GMT"
+							"value": "Thu, 09 Apr 2020 15:10:37 GMT"
 						},
 						{
 							"key": "Connection",
@@ -999,31 +1019,31 @@
 						},
 						{
 							"key": "X-RateLimit-Remaining",
-							"value": "58"
+							"value": "59"
 						}
 					],
 					"cookie": [],
 					"body": null
 				},
 				{
-					"name": "Delete product",
+					"name": "Product destroy",
 					"originalRequest": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products/:id",
+							"raw": "{{url}}/api/products/:productId",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"products",
-								":id"
+								":productId"
 							],
 							"variable": [
 								{
-									"key": "id",
-									"value": "3"
+									"key": "productId",
+									"value": "1"
 								}
 							]
 						}
@@ -1038,11 +1058,11 @@
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:27:20 GMT"
+							"value": "Thu, 09 Apr 2020 15:08:04 GMT"
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:27:20 GMT"
+							"value": "Thu, 09 Apr 2020 15:08:04 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1113,11 +1133,11 @@
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:28:24 GMT"
+							"value": "Thu, 09 Apr 2020 15:11:14 GMT"
 						},
 						{
 							"key": "Date",
-							"value": "Wed, 08 Apr 2020 22:28:24 GMT"
+							"value": "Thu, 09 Apr 2020 15:11:14 GMT"
 						},
 						{
 							"key": "Connection",
@@ -1141,7 +1161,7 @@
 						},
 						{
 							"key": "X-RateLimit-Remaining",
-							"value": "59"
+							"value": "58"
 						}
 					],
 					"cookie": [],
