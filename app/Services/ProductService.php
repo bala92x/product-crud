@@ -91,7 +91,7 @@ class ProductService extends BaseService implements ProductServiceInterface {
 	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
     public function update(int $id, array $attributes): Model {
-        $product = $this->model->findOrFail($id);
+        $product = isset($attributes['product']) ? $attributes['product'] : $this->model->findOrFail($id);
 
         if (isset($attributes['image'])) {
             $imagePath = $this->imageService->replaceAs(
@@ -105,7 +105,7 @@ class ProductService extends BaseService implements ProductServiceInterface {
         $product->update($attributes);
         $this->updateOrCreateTranslations($product, $attributes['product_translations']);
         $product->productTags()->sync($attributes['product_tag_ids']);
-		
+
         return $this->find($product->id);
     }
 	

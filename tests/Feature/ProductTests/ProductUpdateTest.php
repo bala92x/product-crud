@@ -13,17 +13,17 @@ class ProductUpdateTest extends ProductTestCase {
      * @return void
      */
     public function testUpdateProduct(): void {
-        $productId		= 1;
-        $initialProduct	= $this->productService->find($productId);
-        $route 			= self::BASE_URL . $productId;
-        $response 		= $this->post($route, $this->fixtures['productUpdateData']);
-        $product		= $this->productService->find($productId);
-        $expectedJson 	= json_encode(new ProductResource($product));
-
+        $productId			= 1;
+        $initialImagePath	= $this->productService->find($productId)->image_path;
+        $route 				= self::BASE_URL . $productId;
+        $response 			= $this->post($route, $this->fixtures['productUpdateData']);
+        $product			= $this->productService->find($productId);
+        $expectedJson 		= json_encode(new ProductResource($product));
+		
         $response->assertStatus(200)
 		        ->assertSee($expectedJson, $escaped = false);
 
-        Storage::disk('public')->assertMissing($initialProduct->image_path);
+        Storage::disk('public')->assertMissing($initialImagePath);
         Storage::disk('public')->assertExists($product->image_path);
     }
 

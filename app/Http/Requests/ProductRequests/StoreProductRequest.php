@@ -100,7 +100,7 @@ class StoreProductRequest extends ApiFormRequest {
         if (is_null($this->productId)) {
             return [];
         }
-		
+
         try {
             return [
 				'product' 	=> $this->productService->find((int)$this->productId),
