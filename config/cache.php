@@ -101,4 +101,23 @@ return [
 
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache'),
 
+	/*
+    |--------------------------------------------------------------------------
+    | Cache Lifetime
+    |--------------------------------------------------------------------------
+    |
+    | The cache lifetime in seconds
+    |
+    */
+	'lifetime' => env('CACHE_LIFETIME', 1440),
+
+	/*
+    |--------------------------------------------------------------------------
+    | Cache on
+    |--------------------------------------------------------------------------
+    |
+    | Indicates that the application object caching should be used or not.
+    |
+    */
+	'on' => env('CACHE_ON', true),
 ];

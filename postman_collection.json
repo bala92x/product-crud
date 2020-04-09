@@ -1,0 +1,1174 @@
+{
+	"info": {
+		"_postman_id": "770e8661-deaa-423c-bc90-010fac7b2cd7",
+		"name": "Product CRUD",
+		"description": "Multi language product CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/products",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Products index",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:05:27 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:05:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sum\": 3,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"publishedAt\": \"2020-04-20 00:37:15\",\n            \"publishedUntil\": \"2020-07-08 13:51:00\",\n            \"price\": 13600,\n            \"createdAt\": \"2019-10-04 04:03:39\",\n            \"updatedAt\": \"2019-11-23 09:20:02\",\n            \"productTranslations\": [\n                {\n                    \"id\": 1,\n                    \"languageSlug\": \"hu\",\n                    \"name\": \"Et impedit quo voluptatum voluptates unde recusandae esse.\",\n                    \"slug\": \"sed-ut-vel-asperiores-molestiae-sed-ullam-unde\",\n                    \"description\": \"Rabbit say to itself, 'Oh dear! Oh dear! I shall see it quite plainly through the neighbouring pool--she could hear the very tones of her ever getting out of THIS!' (Sounds of more energetic.\",\n                    \"createdAt\": \"2020-01-06 19:58:03\",\n                    \"updatedAt\": \"2020-02-15 09:06:17\"\n                },\n                {\n                    \"id\": 2,\n                    \"languageSlug\": \"en\",\n                    \"name\": \"Quis maxime similique omnis id est aut ipsam.\",\n                    \"slug\": \"et-labore-corporis-ducimus-mollitia\",\n                    \"description\": \"The Gryphon sat up and said, very gravely, 'I think, you ought to have changed since her swim in the sky. Twinkle, twinkle--\\\"' Here the other side of the well, and noticed that they couldn't see.\",\n                    \"createdAt\": \"2019-12-13 21:30:55\",\n                    \"updatedAt\": \"2020-02-22 23:11:12\"\n                }\n            ],\n            \"productTags\": [\n                {\n                    \"id\": 1,\n                    \"createdAt\": \"2019-12-30 04:31:38\",\n                    \"updatedAt\": \"2020-03-03 19:55:50\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 1,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"ipsam\",\n                            \"slug\": \"ipsam\",\n                            \"createdAt\": \"2019-12-22 00:32:38\",\n                            \"updatedAt\": \"2020-02-26 16:01:51\"\n                        },\n                        {\n                            \"id\": 2,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"maiores\",\n                            \"slug\": \"maiores\",\n                            \"createdAt\": \"2019-12-31 06:35:52\",\n                            \"updatedAt\": \"2020-02-11 06:46:13\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 2,\n                    \"createdAt\": \"2019-12-16 09:26:55\",\n                    \"updatedAt\": \"2020-02-11 21:12:43\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 3,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"quia\",\n                            \"slug\": \"quia\",\n                            \"createdAt\": \"2019-12-14 20:12:00\",\n                            \"updatedAt\": \"2020-02-10 03:18:07\"\n                        },\n                        {\n                            \"id\": 4,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"error\",\n                            \"slug\": \"error\",\n                            \"createdAt\": \"2019-12-29 02:55:57\",\n                            \"updatedAt\": \"2020-02-16 18:03:47\"\n                        }\n                    ]\n                }\n            ],\n            \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/1/YNoLNSV4ircyC4m9EGAWhEZF4owbAnVu7RfkyjzE.jpeg\"\n        },\n        {\n            \"id\": 2,\n            \"publishedAt\": \"2020-03-16 16:38:38\",\n            \"publishedUntil\": \"2020-06-27 07:06:18\",\n            \"price\": 23800,\n            \"createdAt\": \"2019-09-24 16:46:40\",\n            \"updatedAt\": \"2019-11-16 12:47:57\",\n            \"productTranslations\": [\n                {\n                    \"id\": 3,\n                    \"languageSlug\": \"hu\",\n                    \"name\": \"Omnis omnis nesciunt doloribus et quo possimus neque.\",\n                    \"slug\": \"dolore-suscipit-necessitatibus-illum-dicta-velit-non-maiores\",\n                    \"description\": \"I should be raving mad after all! I almost wish I'd gone to see it pop down a large arm-chair at one end to the seaside once in the air. '--as far out to sea. So they couldn't get them out with.\",\n                    \"createdAt\": \"2019-12-24 04:26:47\",\n                    \"updatedAt\": \"2020-03-08 07:31:52\"\n                },\n                {\n                    \"id\": 4,\n                    \"languageSlug\": \"en\",\n                    \"name\": \"Tempora nulla eos qui iure.\",\n                    \"slug\": \"et-mollitia-sapiente-totam-voluptas\",\n                    \"description\": \"Let me see: four times six is thirteen, and four times six is thirteen, and four times seven is--oh dear! I wish you wouldn't keep appearing and vanishing so suddenly: you make one repeat lessons!'.\",\n                    \"createdAt\": \"2019-12-21 01:55:23\",\n                    \"updatedAt\": \"2020-02-28 00:27:11\"\n                }\n            ],\n            \"productTags\": [\n                {\n                    \"id\": 2,\n                    \"createdAt\": \"2019-12-16 09:26:55\",\n                    \"updatedAt\": \"2020-02-11 21:12:43\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 3,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"quia\",\n                            \"slug\": \"quia\",\n                            \"createdAt\": \"2019-12-14 20:12:00\",\n                            \"updatedAt\": \"2020-02-10 03:18:07\"\n                        },\n                        {\n                            \"id\": 4,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"error\",\n                            \"slug\": \"error\",\n                            \"createdAt\": \"2019-12-29 02:55:57\",\n                            \"updatedAt\": \"2020-02-16 18:03:47\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 4,\n                    \"createdAt\": \"2019-12-11 14:50:10\",\n                    \"updatedAt\": \"2020-02-11 07:46:39\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 7,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"consequatur\",\n                            \"slug\": \"consequatur\",\n                            \"createdAt\": \"2019-12-11 10:07:03\",\n                            \"updatedAt\": \"2020-02-11 12:14:13\"\n                        },\n                        {\n                            \"id\": 8,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"itaque\",\n                            \"slug\": \"itaque\",\n                            \"createdAt\": \"2019-12-23 16:38:33\",\n                            \"updatedAt\": \"2020-03-05 09:14:21\"\n                        }\n                    ]\n                }\n            ],\n            \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/2/dDxoGtWC17vgaZjIzsnhwHscuFm8Fa5r881dffCC.jpeg\"\n        },\n        {\n            \"id\": 3,\n            \"publishedAt\": \"2020-01-16 23:04:42\",\n            \"publishedUntil\": \"2020-07-08 00:12:35\",\n            \"price\": 27400,\n            \"createdAt\": \"2019-10-05 10:47:51\",\n            \"updatedAt\": \"2019-12-05 01:54:47\",\n            \"productTranslations\": [\n                {\n                    \"id\": 5,\n                    \"languageSlug\": \"hu\",\n                    \"name\": \"Nemo quibusdam corporis iusto alias est sed molestiae.\",\n                    \"slug\": \"nostrum-repellat-voluptatem-unde-omnis-laboriosam-quisquam\",\n                    \"description\": \"Duchess said after a few minutes, and began to cry again. 'You ought to be no use now,' thought poor Alice, 'to pretend to be executed for having cheated herself in a low, timid voice, 'If you.\",\n                    \"createdAt\": \"2020-01-03 07:51:10\",\n                    \"updatedAt\": \"2020-02-17 07:54:43\"\n                },\n                {\n                    \"id\": 6,\n                    \"languageSlug\": \"en\",\n                    \"name\": \"Non fugiat est aperiam libero.\",\n                    \"slug\": \"libero-qui-quo-nobis-quisquam-a-cumque-eius\",\n                    \"description\": \"Mock Turtle said: 'advance twice, set to work very carefully, nibbling first at one end to the Dormouse, who seemed too much frightened to say when I find a number of bathing machines in the.\",\n                    \"createdAt\": \"2019-12-28 11:21:36\",\n                    \"updatedAt\": \"2020-02-15 12:29:20\"\n                }\n            ],\n            \"productTags\": [\n                {\n                    \"id\": 3,\n                    \"createdAt\": \"2019-12-22 06:23:57\",\n                    \"updatedAt\": \"2020-02-15 11:49:05\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 5,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"nisi\",\n                            \"slug\": \"nisi\",\n                            \"createdAt\": \"2019-12-14 13:33:54\",\n                            \"updatedAt\": \"2020-03-03 07:16:18\"\n                        },\n                        {\n                            \"id\": 6,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"omnis\",\n                            \"slug\": \"omnis\",\n                            \"createdAt\": \"2020-01-04 04:30:20\",\n                            \"updatedAt\": \"2020-02-22 04:55:51\"\n                        }\n                    ]\n                },\n                {\n                    \"id\": 6,\n                    \"createdAt\": \"2019-12-25 04:26:18\",\n                    \"updatedAt\": \"2020-02-20 21:04:36\",\n                    \"productTagTranslations\": [\n                        {\n                            \"id\": 11,\n                            \"languageSlug\": \"hu\",\n                            \"name\": \"id\",\n                            \"slug\": \"id\",\n                            \"createdAt\": \"2020-01-08 03:53:50\",\n                            \"updatedAt\": \"2020-02-17 00:33:17\"\n                        },\n                        {\n                            \"id\": 12,\n                            \"languageSlug\": \"en\",\n                            \"name\": \"dignissimos\",\n                            \"slug\": \"dignissimos\",\n                            \"createdAt\": \"2019-12-10 10:36:00\",\n                            \"updatedAt\": \"2020-02-19 10:55:58\"\n                        }\n                    ]\n                }\n            ],\n            \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/3/va46dgOyblQSDbpL0OXapI8XPwEC7LhwwfMCEcoe.jpeg\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Product store",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "publishedAt",
+							"value": "2020-09-20 00:34:42",
+							"type": "text"
+						},
+						{
+							"key": "publishedUntil",
+							"value": "2020-09-30 00:34:42",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "15000",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[0][languageSlug]",
+							"value": "hu",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[0][name]",
+							"value": "100% Tejsavó fehérje",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[0][slug]",
+							"value": "tejsavo-feherje",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[0][description]",
+							"value": "<b>Különleges minőségű</b> tejsavófehérje, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[1][languageSlug]",
+							"value": "en",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[1][name]",
+							"value": "100% Whey Protein",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[1][slug]",
+							"value": "whey-protein",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[1][description]",
+							"value": "<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
+							"type": "text"
+						},
+						{
+							"key": "productTagIds[0]",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "productTagIds[1]",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "productTagIds[3]",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/bala/Downloads/postman-test-image.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/products",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				},
+				"description": "Create a new product"
+			},
+			"response": [
+				{
+					"name": "Product store",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "publishedAt",
+									"value": "2020-09-20 00:34:42",
+									"type": "text"
+								},
+								{
+									"key": "publishedUntil",
+									"value": "2020-09-30 00:34:42",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "15000",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][languageSlug]",
+									"value": "hu",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][name]",
+									"value": "100% Tejsavó fehérje",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][slug]",
+									"value": "tejsavo-feherje",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][description]",
+									"value": "<b>Különleges minőségű</b> tejsavófehérje, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[1][languageSlug]",
+									"value": "en",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[1][name]",
+									"value": "100% Whey Protein",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[1][slug]",
+									"value": "whey-protein",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[1][description]",
+									"value": "<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
+									"type": "text"
+								},
+								{
+									"key": "productTagIds[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "productTagIds[1]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "productTagIds[3]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/bala/Downloads/postman-test-image.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:09 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"publishedAt\": \"2020-09-20 00:34:42\",\n        \"publishedUntil\": \"2020-09-30 00:34:42\",\n        \"price\": 15000,\n        \"createdAt\": \"2020-04-09 17:06:08\",\n        \"updatedAt\": \"2020-04-09 17:06:08\",\n        \"productTranslations\": [\n            {\n                \"id\": 7,\n                \"languageSlug\": \"hu\",\n                \"name\": \"100% Tejsavó fehérje\",\n                \"slug\": \"tejsavo-feherje\",\n                \"description\": \"<b>Különleges minőségű</b> tejsavófehérje, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.\",\n                \"createdAt\": \"2020-04-09 17:06:08\",\n                \"updatedAt\": \"2020-04-09 17:06:08\"\n            },\n            {\n                \"id\": 8,\n                \"languageSlug\": \"en\",\n                \"name\": \"100% Whey Protein\",\n                \"slug\": \"whey-protein\",\n                \"description\": \"<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.\",\n                \"createdAt\": \"2020-04-09 17:06:08\",\n                \"updatedAt\": \"2020-04-09 17:06:08\"\n            }\n        ],\n        \"productTags\": [\n            {\n                \"id\": 1,\n                \"createdAt\": \"2019-12-30 04:31:38\",\n                \"updatedAt\": \"2020-03-03 19:55:50\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 1,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"ipsam\",\n                        \"slug\": \"ipsam\",\n                        \"createdAt\": \"2019-12-22 00:32:38\",\n                        \"updatedAt\": \"2020-02-26 16:01:51\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"maiores\",\n                        \"slug\": \"maiores\",\n                        \"createdAt\": \"2019-12-31 06:35:52\",\n                        \"updatedAt\": \"2020-02-11 06:46:13\"\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"createdAt\": \"2019-12-16 09:26:55\",\n                \"updatedAt\": \"2020-02-11 21:12:43\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 3,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"quia\",\n                        \"slug\": \"quia\",\n                        \"createdAt\": \"2019-12-14 20:12:00\",\n                        \"updatedAt\": \"2020-02-10 03:18:07\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"error\",\n                        \"slug\": \"error\",\n                        \"createdAt\": \"2019-12-29 02:55:57\",\n                        \"updatedAt\": \"2020-02-16 18:03:47\"\n                    }\n                ]\n            },\n            {\n                \"id\": 3,\n                \"createdAt\": \"2019-12-22 06:23:57\",\n                \"updatedAt\": \"2020-02-15 11:49:05\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 5,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"nisi\",\n                        \"slug\": \"nisi\",\n                        \"createdAt\": \"2019-12-14 13:33:54\",\n                        \"updatedAt\": \"2020-03-03 07:16:18\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"omnis\",\n                        \"slug\": \"omnis\",\n                        \"createdAt\": \"2020-01-04 04:30:20\",\n                        \"updatedAt\": \"2020-02-22 04:55:51\"\n                    }\n                ]\n            }\n        ],\n        \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/4/postman-test-image.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Product show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/products/:productId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Get a single product"
+			},
+			"response": [
+				{
+					"name": "Product not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/:productId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "not-a-number"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:53 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This product could not be found.\"\n}"
+				},
+				{
+					"name": "Product show",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/:productId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:31 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:06:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"publishedAt\": \"2020-04-20 00:37:15\",\n        \"publishedUntil\": \"2020-07-08 13:51:00\",\n        \"price\": 13600,\n        \"createdAt\": \"2019-10-04 04:03:39\",\n        \"updatedAt\": \"2019-11-23 09:20:02\",\n        \"productTranslations\": [\n            {\n                \"id\": 1,\n                \"languageSlug\": \"hu\",\n                \"name\": \"Et impedit quo voluptatum voluptates unde recusandae esse.\",\n                \"slug\": \"sed-ut-vel-asperiores-molestiae-sed-ullam-unde\",\n                \"description\": \"Rabbit say to itself, 'Oh dear! Oh dear! I shall see it quite plainly through the neighbouring pool--she could hear the very tones of her ever getting out of THIS!' (Sounds of more energetic.\",\n                \"createdAt\": \"2020-01-06 19:58:03\",\n                \"updatedAt\": \"2020-02-15 09:06:17\"\n            },\n            {\n                \"id\": 2,\n                \"languageSlug\": \"en\",\n                \"name\": \"Quis maxime similique omnis id est aut ipsam.\",\n                \"slug\": \"et-labore-corporis-ducimus-mollitia\",\n                \"description\": \"The Gryphon sat up and said, very gravely, 'I think, you ought to have changed since her swim in the sky. Twinkle, twinkle--\\\"' Here the other side of the well, and noticed that they couldn't see.\",\n                \"createdAt\": \"2019-12-13 21:30:55\",\n                \"updatedAt\": \"2020-02-22 23:11:12\"\n            }\n        ],\n        \"productTags\": [\n            {\n                \"id\": 1,\n                \"createdAt\": \"2019-12-30 04:31:38\",\n                \"updatedAt\": \"2020-03-03 19:55:50\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 1,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"ipsam\",\n                        \"slug\": \"ipsam\",\n                        \"createdAt\": \"2019-12-22 00:32:38\",\n                        \"updatedAt\": \"2020-02-26 16:01:51\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"maiores\",\n                        \"slug\": \"maiores\",\n                        \"createdAt\": \"2019-12-31 06:35:52\",\n                        \"updatedAt\": \"2020-02-11 06:46:13\"\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"createdAt\": \"2019-12-16 09:26:55\",\n                \"updatedAt\": \"2020-02-11 21:12:43\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 3,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"quia\",\n                        \"slug\": \"quia\",\n                        \"createdAt\": \"2019-12-14 20:12:00\",\n                        \"updatedAt\": \"2020-02-10 03:18:07\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"error\",\n                        \"slug\": \"error\",\n                        \"createdAt\": \"2019-12-29 02:55:57\",\n                        \"updatedAt\": \"2020-02-16 18:03:47\"\n                    }\n                ]\n            }\n        ],\n        \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/1/YNoLNSV4ircyC4m9EGAWhEZF4owbAnVu7RfkyjzE.jpeg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Product update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "publishedAt",
+							"value": "2021-09-11 00:34:42",
+							"type": "text"
+						},
+						{
+							"key": "publishedUntil",
+							"value": "2021-09-21 00:34:42",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "20000",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[0][languageSlug]",
+							"value": "hu",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[0][name]",
+							"value": "100% Izolált tejsavó fehérje",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[0][slug]",
+							"value": "izolalt-tejsavo-feherje",
+							"type": "text"
+						},
+						{
+							"key": "productTranslations[0][description]",
+							"value": "<b>Különleges minőségű</b> tejsavófehérje izolátum, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "productTranslations[1][languageSlug]",
+							"value": "en",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "productTranslations[1][name]",
+							"value": "100% Isolated Whey Protein",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "productTranslations[1][slug]",
+							"value": "isolated- whey-protein",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "productTranslations[1][description]",
+							"value": "<b>Special quality</b> whey isolated protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "productTagIds[0]",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "productTagIds[1]",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "productTagIds[3]",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/bala/Downloads/postman-test-image2.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/products/:productId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "4"
+						}
+					]
+				},
+				"description": "Update an existing product"
+			},
+			"response": [
+				{
+					"name": "Product not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "publishedAt",
+									"value": "2021-09-11 00:34:42",
+									"type": "text"
+								},
+								{
+									"key": "publishedUntil",
+									"value": "2021-09-21 00:34:42",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20000",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][languageSlug]",
+									"value": "hu",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][name]",
+									"value": "100% Izolált tejsavó fehérje",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][slug]",
+									"value": "izolalt-tejsavo-feherje",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][description]",
+									"value": "<b>Különleges minőségű</b> tejsavófehérje izolátum, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTranslations[1][languageSlug]",
+									"value": "en",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTranslations[1][name]",
+									"value": "100% Isolated Whey Protein",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTranslations[1][slug]",
+									"value": "isolated- whey-protein",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTranslations[1][description]",
+									"value": "<b>Special quality</b> whey isolated protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTagIds[0]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "productTagIds[1]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "productTagIds[3]",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/bala/Downloads/postman-test-image2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/products/:productId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "not-a-number"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:07:38 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:07:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This product could not be found.\"\n}"
+				},
+				{
+					"name": "Product update",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "publishedAt",
+									"value": "2021-09-11 00:34:42",
+									"type": "text"
+								},
+								{
+									"key": "publishedUntil",
+									"value": "2021-09-21 00:34:42",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20000",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][languageSlug]",
+									"value": "hu",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][name]",
+									"value": "100% Izolált tejsavó fehérje",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][slug]",
+									"value": "izolalt-tejsavo-feherje",
+									"type": "text"
+								},
+								{
+									"key": "productTranslations[0][description]",
+									"value": "<b>Különleges minőségű</b> tejsavófehérje izolátum, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTranslations[1][languageSlug]",
+									"value": "en",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTranslations[1][name]",
+									"value": "100% Isolated Whey Protein",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTranslations[1][slug]",
+									"value": "isolated- whey-protein",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTranslations[1][description]",
+									"value": "<b>Special quality</b> whey isolated protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "productTagIds[0]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "productTagIds[1]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "productTagIds[3]",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/bala/Downloads/postman-test-image2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/products/:productId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:07:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:07:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "56"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"publishedAt\": \"2021-09-11 00:34:42\",\n        \"publishedUntil\": \"2021-09-21 00:34:42\",\n        \"price\": 20000,\n        \"createdAt\": \"2020-04-09 17:06:08\",\n        \"updatedAt\": \"2020-04-09 17:07:07\",\n        \"productTranslations\": [\n            {\n                \"id\": 7,\n                \"languageSlug\": \"hu\",\n                \"name\": \"100% Izolált tejsavó fehérje\",\n                \"slug\": \"izolalt-tejsavo-feherje\",\n                \"description\": \"<b>Különleges minőségű</b> tejsavófehérje, Native Whey Isolate alapanyaggal, hozzáadott BCAA és glutamin aminosavakkal.\",\n                \"createdAt\": \"2020-04-09 17:06:08\",\n                \"updatedAt\": \"2020-04-09 17:07:07\"\n            },\n            {\n                \"id\": 8,\n                \"languageSlug\": \"en\",\n                \"name\": \"100% Whey Protein\",\n                \"slug\": \"whey-protein\",\n                \"description\": \"<b>Special quality</b> whey protein, with Native Whey Isolate ingredient, added BCAA and glutamin aminoacids.\",\n                \"createdAt\": \"2020-04-09 17:06:08\",\n                \"updatedAt\": \"2020-04-09 17:06:08\"\n            }\n        ],\n        \"productTags\": [\n            {\n                \"id\": 3,\n                \"createdAt\": \"2019-12-22 06:23:57\",\n                \"updatedAt\": \"2020-02-15 11:49:05\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 5,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"nisi\",\n                        \"slug\": \"nisi\",\n                        \"createdAt\": \"2019-12-14 13:33:54\",\n                        \"updatedAt\": \"2020-03-03 07:16:18\"\n                    },\n                    {\n                        \"id\": 6,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"omnis\",\n                        \"slug\": \"omnis\",\n                        \"createdAt\": \"2020-01-04 04:30:20\",\n                        \"updatedAt\": \"2020-02-22 04:55:51\"\n                    }\n                ]\n            },\n            {\n                \"id\": 5,\n                \"createdAt\": \"2019-12-13 21:56:58\",\n                \"updatedAt\": \"2020-03-09 09:11:34\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 9,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"dolor\",\n                        \"slug\": \"dolor\",\n                        \"createdAt\": \"2020-01-08 12:06:11\",\n                        \"updatedAt\": \"2020-03-08 20:21:47\"\n                    },\n                    {\n                        \"id\": 10,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"voluptatem\",\n                        \"slug\": \"voluptatem\",\n                        \"createdAt\": \"2019-12-16 21:05:08\",\n                        \"updatedAt\": \"2020-02-22 16:03:13\"\n                    }\n                ]\n            },\n            {\n                \"id\": 6,\n                \"createdAt\": \"2019-12-25 04:26:18\",\n                \"updatedAt\": \"2020-02-20 21:04:36\",\n                \"productTagTranslations\": [\n                    {\n                        \"id\": 11,\n                        \"languageSlug\": \"hu\",\n                        \"name\": \"id\",\n                        \"slug\": \"id\",\n                        \"createdAt\": \"2020-01-08 03:53:50\",\n                        \"updatedAt\": \"2020-02-17 00:33:17\"\n                    },\n                    {\n                        \"id\": 12,\n                        \"languageSlug\": \"en\",\n                        \"name\": \"dignissimos\",\n                        \"slug\": \"dignissimos\",\n                        \"createdAt\": \"2019-12-10 10:36:00\",\n                        \"updatedAt\": \"2020-02-19 10:55:58\"\n                    }\n                ]\n            }\n        ],\n        \"imagePath\": \"http://127.0.0.1:8000/storage/images/product-images/4/postman-test-image2.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Product destroy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/products/:productId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"products",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Delete an existing product"
+			},
+			"response": [
+				{
+					"name": "Product not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/:productId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "not-a-number"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:10:37 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:10:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Product destroy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/products/:productId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:08:04 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:08:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Page not found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/404",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"404"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Page not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/404",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"404"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:11:14 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 09 Apr 2020 15:11:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Page not found.\"\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

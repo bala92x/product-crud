@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Product CRUD'),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Budapest',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'hu',
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'hu_HU',
 
     /*
     |--------------------------------------------------------------------------
@@ -227,6 +227,29 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-    ],
+	],
+	
+	/*
+    |--------------------------------------------------------------------------
+    | Custom configurations
+    |--------------------------------------------------------------------------
+    */
 
+	'seeder_quantity' 	=> env('SEEDER_QUANTITY', 10),
+	'languages'			=> [
+
+		'hu_HU'	=> [
+			'name' 			=> 'magyar',
+            'code' 			=> 'hu_HU',
+            'slug' 			=> 'hu'
+		],
+		'en_US' => [
+			'name' 			=> 'english',
+            'code' 			=> 'en_US',
+			'slug' 			=> 'en'
+		]
+
+		],
+	'max_image_size'	=> env('MAX_IMAGE_SIZE', 10240), // KB
+	'max_text_length'	=> env('MAX_TEXT_LENGTH', 50000)
 ];
