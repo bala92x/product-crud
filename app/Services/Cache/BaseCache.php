@@ -86,10 +86,9 @@ class BaseCache implements BaseServiceInterface {
      * @return Model
      */
     public function create(array $attributes): Model {
-        Cache::forget($this->generateCacheKey(['all']));
-		
         $instance = $this->service->create($attributes);
-
+		
+        Cache::forget($this->generateCacheKey(['all']));
         Cache::put($this->generateCacheKey([$instance->id]), $instance, $this->lifetime);
 		
         return $instance;
@@ -107,7 +106,7 @@ class BaseCache implements BaseServiceInterface {
         Cache::forget($this->generateCacheKey([$id]));
 		
         $instance = $this->service->update($id, $attributes);
-
+		
         Cache::put($this->generateCacheKey([$id]), $instance, $this->lifetime);
 
         return $instance;

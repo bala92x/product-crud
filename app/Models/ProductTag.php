@@ -31,6 +31,16 @@ class ProductTag extends Model {
     protected $table = 'product_tags';
 	
     /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+		'created_at'	=> 'string',
+		'updated_at'	=> 'string'
+	];
+	
+    /**
      * The "booted" method of the model.
      *
      * @return void

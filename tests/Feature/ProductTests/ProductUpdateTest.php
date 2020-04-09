@@ -8,22 +8,24 @@ use App\Http\Resources\ProductResources\ProductResource;
 
 class ProductUpdateTest extends ProductTestCase {
     /**
-     * Test update product
+     * Test product update
      *
      * @return void
      */
     public function testUpdateProduct(): void {
-        $productId		= 1;
-        $initialProduct	= $this->productService->find($productId);
-        $route 			= self::BASE_URL . $productId;
-        $response 		= $this->post($route, $this->fixtures['productUpdateData']);
-        $product		= $this->productService->find($productId);
-        $expectedJson 	= json_encode(new ProductResource($product));
-
+        $productId			= 1;
+        $initialImagePath	= $this->productService->find($productId)->image_path;
+        $route 				= self::BASE_URL . $productId;
+        $response 			= $this->post($route, $this->fixtures['productUpdateData']);
+        $product			= $this->productService->find($productId);
+        $expectedJson 		= json_encode(new ProductResource($product));
+		
         $response->assertStatus(200)
-		        ->assertSee($expectedJson, $escaped = false);
+			->assertSee($expectedJson, $escaped = false);
+			
+        $this->assertDataSaved($product, $this->fixtures['productUpdateData']);
 
-        Storage::disk('public')->assertMissing($initialProduct->image_path);
+        Storage::disk('public')->assertMissing($initialImagePath);
         Storage::disk('public')->assertExists($product->image_path);
     }
 
@@ -60,7 +62,7 @@ class ProductUpdateTest extends ProductTestCase {
     }
 	
     /**
-     * Test update nonexistent product
+     * Test product update with nonexistent id
      *
      * @return void
      */

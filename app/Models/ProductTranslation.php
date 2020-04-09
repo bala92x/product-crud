@@ -30,6 +30,16 @@ class ProductTranslation extends Model {
      * @var string
      */
     protected $table = 'product_translations';
+	
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+		'created_at'	=> 'string',
+		'updated_at'	=> 'string',
+	];
 
     /**
      * The attributes that are mass assignable.

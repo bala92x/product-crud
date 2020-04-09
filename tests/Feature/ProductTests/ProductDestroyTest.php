@@ -4,13 +4,13 @@ namespace Tests\Feature\ProductTests;
 
 use Illuminate\Support\Facades\Storage;
 
-class ProductDeleteTest extends ProductTestCase {
+class ProductDestroyTest extends ProductTestCase {
     /**
-     * Test delete product
+     * Test product destroy
      *
      * @return void
      */
-    public function testDeleteProduct(): void {
+    public function testDestroyProduct(): void {
         $productId		= 1;
         $route 			= self::BASE_URL . $productId;
 		
@@ -19,15 +19,15 @@ class ProductDeleteTest extends ProductTestCase {
         $response = $this->delete($route);
 		
         $response->assertNoContent(204);
-        $this->assertProductDeleted($productId);
+        $this->assertProductDestroyed($productId);
     }
 	
     /**
-     * Test delete product with nonexistent id
+     * Test product destroy with nonexistent id
      *
      * @return void
      */
-    public function testDeleteNonexistentProduct(): void {
+    public function testDestroyNonexistentProduct(): void {
         $route 		= self::BASE_URL . $this->invalidId;
         $response 	= $this->delete($route);
 
@@ -35,11 +35,11 @@ class ProductDeleteTest extends ProductTestCase {
     }
 	
     /**
-     * Assert that the product and all its relations are deleted.
+     * Assert that the product and all its relations are destroyed.
      *
      * @return void
      */
-    public function assertProductDeleted(int $productId): void {
+    public function assertProductDestroyed(int $productId): void {
         $this->assertSoftDeleted('products', ['id' => $productId]);
         $this->assertSoftDeleted('product_translations', ['product_id' => $productId]);
         $this->assertDatabaseMissing('products_product_tags', ['product_id' => $productId]);

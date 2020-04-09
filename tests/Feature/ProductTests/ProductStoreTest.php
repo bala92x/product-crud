@@ -6,21 +6,22 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Http\Resources\ProductResources\ProductResource;
 
-class ProductCreateTest extends ProductTestCase {
+class ProductStoreTest extends ProductTestCase {
     /**
-     * Test create product
+     * Test product store
      *
      * @return void
      */
-    public function testCreateProduct(): void {
+    public function testStoreProduct(): void {
         $route 			= self::BASE_URL;
-        $response 		= $this->post($route, $this->fixtures['productCreateData']);
+        $response 		= $this->post($route, $this->fixtures['productStoreData']);
         $productId 		= json_decode($response->getContent())->data->id;
         $product		= $this->productService->find($productId);
         $expectedJson 	= json_encode(new ProductResource($product));
 		
         $response->assertStatus(201)
 				->assertSee($expectedJson, $escaped = false);
+        $this->assertDataSaved($product, $this->fixtures['productStoreData']);
 		
         Storage::disk('public')->assertExists($product->image_path);
     }

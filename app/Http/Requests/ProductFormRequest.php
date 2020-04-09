@@ -1,30 +1,28 @@
 <?php
 
-namespace App\Http\Requests\ProductRequests;
+namespace App\Http\Requests;
 
 use Exception;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-use App\Http\Requests\ApiFormRequest;
-use App\Http\Requests\ProvidesAdditionalInput;
 use App\Services\ProductService;
 use App\Services\Interfaces\ProductServiceInterface;
 
-class StoreProductRequest extends ApiFormRequest {
+class ProductFormRequest extends ApiFormRequest {
     use ProvidesAdditionalInput;
 	
     /**
-	 * The service used to manage products.
-	 * 
+     * The service used to manage products.
+     * 
      * @var ProductService
      */
     private $productService;
 	
     /**
-     * StoreProductRequest constructor.
+     * ProductFormRequest constructor.
      * 
-	 * @param ProductServiceInterface $productService
+     * @param ProductServiceInterface $productService
      * @return void
      */
     public function __construct(ProductServiceInterface $productService) {
@@ -41,10 +39,10 @@ class StoreProductRequest extends ApiFormRequest {
 			// Product
             'publishedAt' 		=> [
 				'required_without:productId',
-				'date'
+				'date_format:Y-m-d H:i:s'
 			],
 			'publishedUntil' 	=> [
-				'date',
+				'date_format:Y-m-d H:i:s',
 				'after:publishedAt'
 			],
 			'price'				=> [
@@ -92,9 +90,9 @@ class StoreProductRequest extends ApiFormRequest {
      * Return additional request data.
      *
      * @return array
-	 * 
-	 * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
-	 * @throws \Symfony\Component\HttpKernel\Exception\HttpException
+     * 
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     protected function additionalInput(): array {
         if (is_null($this->productId)) {
@@ -103,9 +101,9 @@ class StoreProductRequest extends ApiFormRequest {
 		
         try {
             return [
-				'product' 	=> $this->productService->find((int)$this->productId),
-				'productId'	=> $this->productId
-			];
+        		'product' 	=> $this->productService->find((int)$this->productId),
+        		'productId'	=> $this->productId
+        	];
         } catch (ModelNotFoundException $e) {
             abort(404, 'This product could not be found.');
         } catch (Exception $e) {

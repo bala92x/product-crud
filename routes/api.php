@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::prefix('products')->group(function () {
-    Route::get('/', 'ProductControllers\ProductFetchController@list');
-    Route::get('/{productId}', 'ProductControllers\ProductFetchController@get');
-    Route::post('/{productId?}', 'ProductControllers\ProductStoreController@store');
-    Route::delete('/{productId}', 'ProductControllers\ProductDeleteController@delete');
+    Route::get('/', 'ProductController@index');
+    Route::get('/{productId}', 'ProductController@show');
+    Route::post('/', 'ProductController@store');
+    Route::post('/{productId?}', 'ProductController@update');
+    Route::delete('/{productId}', 'ProductController@destroy');
 });
 
 Route::fallback(function() {
