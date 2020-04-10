@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Str;
+use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Faker\Factory as Faker;
 
 use App\Models\ProductTag;
 use App\Models\Language;
@@ -20,13 +21,13 @@ class ProductTagTranslationsTableSeeder extends Seeder {
 		
         foreach ($productTags as $productTag) {
             foreach ($languages as $language) {
-                $name = $faker->unique->word;
+                $name = $faker->unique->words(3, $asText = true);
 
                 DB::table('product_tag_translations')->insert([
 					'product_tag_id' 	=> $productTag->id,
 					'language_slug' 	=> $language->slug,
 					'name' 				=> $name,
-					'slug' 				=> $name,
+					'slug' 				=> Str::slug($name),
 					'created_at' 		=> $faker->dateTimeBetween('-4 months', '-3 month'),
 					'updated_at' 		=> $faker->dateTimeBetween('-2 months', '-1 month'),
 				]);

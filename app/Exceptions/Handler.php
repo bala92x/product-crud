@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Throwable;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -48,6 +49,10 @@ class Handler extends ExceptionHandler {
      * @throws \Throwable
      */
     public function render($request, Throwable $exception) {
+        if ($exception instanceof HttpException && env('APP_DEBUG')) {
+            throw $exception;
+        }
+		
         if ($exception instanceof ModelNotFoundException) {
             $modelName	= strtolower(class_basename($exception->getModel()));
 
