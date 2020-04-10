@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -25,6 +26,7 @@ class ProductController extends Controller {
     /**
      * Create a new controller instance.
      *
+	 * @param ProductService $productService
      * @return void
      */
     public function __construct(ProductServiceInterface $productService) {
@@ -34,13 +36,21 @@ class ProductController extends Controller {
     /**
      * Display a listing of the resource.
      *
-     * @return ProductCollection
+	 * @param Request $request
+	 * @return ProductCollection
+	 * 
+	 * @uses $_GET['page']
+	 * @uses $_GET['limit']
 	 * 
 	 * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
-    public function index(): ProductCollection {
+    public function index(Request $request): ProductCollection {
         try {
-            $products = $this->productService->all();
+            $products = $this->productService
+							->paginated(
+								$request->query('page'),
+								$request->query('limit')
+							);
 			
             return new ProductCollection($products);
         } catch (Exception $e) {

@@ -7,12 +7,13 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Services\UsesPagination;
 use App\Services\BaseService;
 use App\Services\Interfaces\BaseServiceInterface;
 
 
 class BaseCache implements BaseServiceInterface {
-    use GeneratesCacheKey;
+    use GeneratesCacheKey, UsesPagination;
 
     /**
      * Cache lifetime in seconds.

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Services\Interfaces\BaseServiceInterface;
 
 class BaseService implements BaseServiceInterface {
-    use UsesRelationships;
+    use UsesRelationships, UsesPagination;
 	
     /**
 	 * The model managed by this service.
