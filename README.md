@@ -54,7 +54,7 @@ DB_PASSWORD=
 ### 6. Migrate the tables and seed the database with mock data
 
 ```console
-php artisan migrate && php artisan db:seed
+php artisan migrate --seed
 ```
 
 ### 7. Start a development server
@@ -65,7 +65,7 @@ php artisan serve
 
 ## Endpoints
 
--   Products index - `GET /api/products/`
+-   Products index - `GET /api/products/` - `Params: page|limit`
 -   Product store - `POST /api/products/` - `Content-Type: form-data`
 -   Product show - `GET /api/products/:id`
 -   Product update - `POST /api/products/:id` - `Content-Type: form-data`
