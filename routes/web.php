@@ -10,3 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::fallback(function() {
+    return redirect()->route('version');
+})->name('index');

@@ -13,17 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function() {
+    return response()->json([
+		'version' => config('app.version')
+	]);
+})->name('version');
 
-Route::prefix('products')->group(function () {
-    Route::get('/', 'ProductController@index');
-    Route::get('/{productId}', 'ProductController@show');
-    Route::post('/', 'ProductController@store');
-    Route::post('/{productId?}', 'ProductController@update');
-    Route::delete('/{productId}', 'ProductController@destroy');
-});
+Route::apiResource('products', 'ProductController')->parameters(['products' => 'productId']);
+
+Route::apiResource('images', 'ImageController')->parameters(['images' => 'imageId']);
+Route::post('images/upload', 'ImageController@upload')->name('images.upload');
 
 Route::fallback(function() {
     return response()->json([
 		'message' 	=> 'Page not found.',
 	], 404);
-});
+})->name('404');
