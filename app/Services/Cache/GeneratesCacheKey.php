@@ -8,14 +8,14 @@ trait GeneratesCacheKey {
     /**
      * Generate cache key
      * 
-     * @param array $keys
+     * @param array $fragments
 	 * @return string
      */
-    protected function generateCacheKey(array $keys = []): string {
-        $appPrefix 	= Config::get('cache.prefix');
-        $modelName 	= strtolower(class_basename($this->model));
-        $argsKey	= implode('_', $keys);
+    protected function generateCacheKey(array $fragments = []): string {
+        $appPrefix 		= Config::get('cache.prefix');
+        $modelName 		= strtolower(class_basename($this->model));
+        $fragmentsKey	= implode('_', $fragments);
 
-        return implode('_',  [$appPrefix, $modelName, $argsKey]);
+        return implode('_',  [$appPrefix, $modelName, $fragmentsKey]);
     }
 }

@@ -6,14 +6,13 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\LengthAwarePaginator;
 
-use App\Services\UsesPagination;
 use App\Services\BaseService;
 use App\Services\Interfaces\BaseServiceInterface;
 
-
 class BaseCache implements BaseServiceInterface {
-    use GeneratesCacheKey, UsesPagination;
+    use GeneratesCacheKey;
 
     /**
      * Cache lifetime in seconds.
@@ -63,6 +62,18 @@ class BaseCache implements BaseServiceInterface {
 			}
 		);
     }
+	
+    /**
+     * Get a page of several instances with pagination meta data.
+     * 
+     * @param mixed $page
+     * @param mixed $limit
+	 * @param Collection $all
+     * @return LengthAwarePaginator
+     */
+    public function paginated($page = 1, $limit = null, Collection $all = null): LengthAwarePaginator {
+        return $this->service->paginated($page, $limit, $this->all());
+    }
 
     /**
 	 * Find an instance by id.
@@ -89,7 +100,8 @@ class BaseCache implements BaseServiceInterface {
     public function create(array $attributes): Model {
         $instance = $this->service->create($attributes);
 		
-        Cache::forget($this->generateCacheKey(['all']));
+        $this->forgetMultipleKeys(['all'], ['count']);
+		
         Cache::put($this->generateCacheKey([$instance->id]), $instance, $this->lifetime);
 		
         return $instance;
@@ -103,8 +115,7 @@ class BaseCache implements BaseServiceInterface {
      * @return Model
      */
     public function update(int $id, array $attributes): Model {
-        Cache::forget($this->generateCacheKey(['all']));
-        Cache::forget($this->generateCacheKey([$id]));
+        $this->forgetMultipleKeys(['all'], [$id]);
 		
         $instance = $this->service->update($id, $attributes);
 		
@@ -120,8 +131,7 @@ class BaseCache implements BaseServiceInterface {
      * @return bool
      */
     public function delete(int $id): bool {
-        Cache::forget($this->generateCacheKey(['all']));
-        Cache::forget($this->generateCacheKey([$id]));
+        $this->forgetMultipleKeys(['all'], ['count'], [$id]);
 		
         return $this->service->delete($id);
     }
@@ -139,5 +149,17 @@ class BaseCache implements BaseServiceInterface {
 			    return $this->service->count();
 			}
 		);
+    }
+	
+    /**
+     * Forget multiple cache keys.
+     * 
+	 * @param array ...$toForget
+     * @return void
+     */
+    private function forgetMultipleKeys(array ...$toForget): void {
+        foreach ($toForget as $fragments) {
+            Cache::forget($this->generateCacheKey($fragments));
+        }
     }
 }

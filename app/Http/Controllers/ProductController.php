@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\Services\ProductService;
@@ -123,15 +123,15 @@ class ProductController extends Controller {
      * Remove the specified resource from storage.
      *
 	 * @param string $productId
-     * @return Response
+     * @return JsonResponse
 	 * 
 	 * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
-    public function destroy(string $productId): Response {
+    public function destroy(string $productId): JsonResponse {
         try {
             $this->productService->delete((int)$productId);
 			
-            return response(null, 204);
+            return response()->json(null, 204);
         } catch (Exception $e) {
             abort(500, 'Product delete error.');
         }

@@ -16,10 +16,10 @@ class ProductsTableSeeder extends Seeder {
         $seederQuantity = (int)Config::get('app.seeder_quantity');
 		
         for ($i = 0; $i < $seederQuantity; $i++) {
-            $imageFolder 	= '/images/product-images/' . ($i + 1);
+            $imageFolder 	= '/products/' . uniqid();
             $imagePath 		= Storage::disk('public')
 									->putFile($imageFolder, UploadedFile::fake()->image('image.jpeg'));
-			
+
             DB::table('products')->insert([
 				'published_at' 		=> $faker->dateTimeBetween('-3 months', '+1 month'),
 				'published_until' 	=> $faker->dateTimeBetween('+1 month', '+3 months'),

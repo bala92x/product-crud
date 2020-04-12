@@ -13,17 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::prefix('products')->group(function () {
-    Route::get('/', 'ProductController@index');
-    Route::get('/{productId}', 'ProductController@show');
-    Route::post('/', 'ProductController@store');
-    Route::post('/{productId?}', 'ProductController@update');
-    Route::delete('/{productId}', 'ProductController@destroy');
-});
-
-Route::fallback(function() {
+Route::get('/', function() {
     return response()->json([
-		'message' 	=> 'Page not found.',
-	], 404);
-});
+		'version' => config('app.version')
+	]);
+})->name('version');
+
+Route::apiResource('products', 'ProductController')->parameters(['products' => 'productId']);
+
+Route::post('files', 'FileController@upload')->name('files.upload');

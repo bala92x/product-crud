@@ -2,27 +2,9 @@
 
 namespace App\Services\Interfaces;
 
-use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 interface ProductServiceInterface {
-    /**
-	 * Get all instances.
-	 * 
-	 * @return Collection
-     */
-    public function all(): Collection;
-
-    /**
-	 * Find an instance by id.
-	 * 
-     * @param int $id
-     * @return Model
-	 * 
-	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
-     */
-    public function find(int $id): ?Model;
-	
     /**
      * Create a new instance.
      *  
@@ -51,9 +33,9 @@ interface ProductServiceInterface {
     public function delete(int $id): bool;
 	
     /**
-     * Delete the product images folder.
+     * Delete the product files folder.
      *
      * @return bool
      */
-    public function deleteAllImages(): bool;
+    public function deleteAllFiles(): bool;
 }

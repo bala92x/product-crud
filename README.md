@@ -65,12 +65,19 @@ php artisan serve
 
 ## Endpoints
 
--   Products index - `GET /api/products/` - `Params: page|limit`
--   Product store - `POST /api/products/` - `Content-Type: form-data`
--   Product show - `GET /api/products/:id`
--   Product update - `POST /api/products/:id` - `Content-Type: form-data`
+### Products
+
+-   Products index - `GET|HEAD /api/products/` - `Params: page|limit`
+-   Product store - `POST /api/products/` - `Content-type: application/json`
+-   Product show - `GET|HEAD /api/products/:id`
+-   Product update - `PUT|PATCH /api/products/:id` - `Content-type: application/json`
 -   Product destroy - `DELETE /api/products/:id`
--   Page not found - `GET /api/404`
+
+### Other
+
+-   Version - `GET /api`
+-   File upload - `POST /api/files` - `Content-type: multipart/form-data`
+-   Page not found - `GET /404`
 
 ## Examples requests and responses
 

@@ -4,15 +4,16 @@ namespace App\Services;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 use App\Services\Interfaces\BaseServiceInterface;
 
 class BaseService implements BaseServiceInterface {
-    use UsesRelationships, UsesPagination;
+    use UsesRelationships;
 	
     /**
-	 * The model managed by this service.
-	 * 
+     * The model managed by this service.
+     * 
      * @var Model
      */
     protected $model;
@@ -36,6 +37,30 @@ class BaseService implements BaseServiceInterface {
         $queryBase = $this->query ?: $this->model;
 		
         return $queryBase->get();
+    }
+	
+    /**
+     * Get a page of several instances with pagination meta data.
+     * 
+     * @param mixed $page
+     * @param mixed $limit
+	 * @param Collection $all
+     * @return LengthAwarePaginator
+     */
+    public function paginated($page = 1, $limit = null, Collection $all = null): LengthAwarePaginator {
+        $all		= $all ?: $this->all();
+        $count		= $all->count();
+        $page 		= max((int)$page, 1);
+        $limit		= (int)$limit ?: $count;
+        $paginator 	= new LengthAwarePaginator(
+			$all->forPage($page, $limit),
+			$count,
+			$limit,
+			$page,
+			['path' => request()->url()]
+		);
+
+        return $paginator;
     }
 
     /**
