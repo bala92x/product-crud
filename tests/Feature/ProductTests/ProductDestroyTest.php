@@ -2,8 +2,6 @@
 
 namespace Tests\Feature\ProductTests;
 
-use Illuminate\Support\Facades\Storage;
-
 class ProductDestroyTest extends ProductTestCase {
     /**
      * Test product destroy
@@ -13,8 +11,6 @@ class ProductDestroyTest extends ProductTestCase {
     public function testDestroyProduct(): void {
         $productId		= 1;
         $route 			= self::BASE_URL . $productId;
-		
-        Storage::disk('public')->assertExists(self::IMAGES_BASE_FOLDER . $productId);
 		
         $response = $this->delete($route);
 		
@@ -43,6 +39,5 @@ class ProductDestroyTest extends ProductTestCase {
         $this->assertSoftDeleted('products', ['id' => $productId]);
         $this->assertSoftDeleted('product_translations', ['product_id' => $productId]);
         $this->assertDatabaseMissing('products_product_tags', ['product_id' => $productId]);
-        Storage::disk('public')->assertMissing(self::IMAGES_BASE_FOLDER . $productId);
     }
 }

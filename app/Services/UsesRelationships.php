@@ -16,11 +16,11 @@ trait UsesRelationShips {
      * Eager load relationships.
      *
      * @param array $relations
-     * @return BaseServiceInterface
+     * @return void
      */
-    public function with(array $relations): BaseServiceInterface {
-        $this->query = $this->model->with($relations);
-		
-        return $this;
+    protected function bootRelationships(): void {
+        if ($this->withRelationships) {
+            $this->query = $this->model->with($this->withRelationships);
+        }
     }
 }

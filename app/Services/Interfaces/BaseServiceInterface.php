@@ -4,6 +4,7 @@ namespace App\Services\Interfaces;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 interface BaseServiceInterface {
     /**
@@ -12,6 +13,16 @@ interface BaseServiceInterface {
 	 * @return Collection
      */
     public function all(): Collection;
+	
+    /**
+     * Get a page of several instances with pagination meta data.
+     * 
+     * @param mixed $page
+     * @param mixed $limit
+	 * @param Collection $all
+     * @return LengthAwarePaginator
+     */
+    public function paginated($page = 1, $limit = null, Collection $all = null): LengthAwarePaginator;
 
     /**
 	 * Find an instance by id.

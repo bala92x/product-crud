@@ -7,6 +7,13 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource {
     /**
+     * Default image path
+     * 
+     * @var string
+     */
+    const DEFAULT_IMAGE_PATH = '/images/default-product-image.png';
+	
+    /**
      * Customize the outgoing response for the resource.
      *
      * @param \Illuminate\Http\Request $request
@@ -14,7 +21,7 @@ class ProductResource extends JsonResource {
      * @return void
      */
     public function withResponse($request, $response): void {
-        if ($request->getMethod() === 'POST' && is_null($request->productId)) {
+        if ($request->getMethod() === 'POST') {
             $response->setStatusCode(201);
         }
     }
@@ -41,10 +48,14 @@ class ProductResource extends JsonResource {
 			)
 		];
 
-        if ($this->image_path === '/images/default-product-image.png') {
-            $transformedArray['imagePath'] = url($this->image_path);
+        if (
+			$this->image_path === self::DEFAULT_IMAGE_PATH ||
+			!Storage::disk('public')->exists($this->image_path)
+		) {
+            $transformedArray['imagePath'] = url(self::DEFAULT_IMAGE_PATH);
         } else {
-            $transformedArray['imagePath'] = asset(Storage::url($this->image_path));
+            $imagePath 						= trim($this->image_path, '/');
+            $transformedArray['imagePath'] 	= asset(Storage::url($imagePath));
         }
 		
         return $transformedArray;

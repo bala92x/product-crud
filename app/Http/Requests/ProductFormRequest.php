@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
+use App\Rules\FileExists;
 use App\Services\ProductService;
 use App\Services\Interfaces\ProductServiceInterface;
 
@@ -49,10 +50,8 @@ class ProductFormRequest extends ApiFormRequest {
 				'required_without:productId',
 				'integer'
 			],
-			'image'				=> [
-				'required_without:productId',
-				'image',
-				'max:' . Config::get('app.max_image_size')
+			'imagePath'			=> [
+				new FileExists('public')
 			],
 
 			// Product translations

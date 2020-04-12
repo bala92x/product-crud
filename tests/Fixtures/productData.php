@@ -1,13 +1,10 @@
 <?php
 
-use Illuminate\Http\UploadedFile;
-
 return [
 	'productStoreData' 			=> [
 		'publishedAt'			=> '2020-09-20 00:34:42',
 		'publishedUntil'		=> '2020-09-30 00:34:42',
 		'price'					=> 15000,
-		'image'					=> UploadedFile::fake()->image('image.jpg'),
 		'productTranslations'	=>  [
 			0 => [
 				'languageSlug' 	=> 'hu',
@@ -32,7 +29,6 @@ return [
 		'publishedAt'			=> '2021-09-20 00:34:42',
 		'publishedUntil'		=> '2021-09-30 00:34:42',
 		'price'					=> 20000,
-		'image'					=> UploadedFile::fake()->image('new-image.jpg'),
 		'productTranslations'	=>  [
 			1 => [
 				'languageSlug' 	=> 'en',
@@ -51,7 +47,7 @@ return [
 		'publishedAt'			=> '2021-09-20 00:34:42',
 		'publishedUntil'		=> '2021-08-30 00:34:42',
 		'price'					=> 'not a number',
-		'image'					=> null,
+		'imagePath'				=> 'invalid-path',
 		'productTranslations'	=>  [
 			1 => [
 				'languageSlug' 	=> 'en',
