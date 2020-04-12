@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\Config;
 
 use App\Services\Interfaces\BaseServiceInterface;
 use App\Services\Interfaces\ProductServiceInterface;
-use App\Services\Interfaces\ImageServiceInterface;
+use App\Services\Interfaces\FileServiceInterface;
 use App\Services\BaseService;
 use App\Services\ProductService;
-use App\Services\ImageService;
+use App\Services\FileService;
 use App\Services\Cache\BaseCache;
 use App\Services\Cache\ProductCache;
 
@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider {
             $this->app->bind(ProductServiceInterface::class, ProductService::class);
         }
 
-        $this->app->bind(ImageServiceInterface::class, ImageService::class);
+        $this->app->bind(FileServiceInterface::class, FileService::class);
     }
 
     /**

@@ -20,11 +20,11 @@ class ProductTestCase extends TestCase {
     const BASE_URL = '/api/products/';
 	
     /**
-     * Image base folder
+     * Files base folder
      * 
      * @var string
      */
-    const IMAGES_BASE_FOLDER = '/images/product-images/';
+    const FILES_BASE_FOLDER = 'products';
 	
     /**
      * The data needed to create or update a product.

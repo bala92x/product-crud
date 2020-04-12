@@ -68,24 +68,16 @@ php artisan serve
 ### Products
 
 -   Products index - `GET|HEAD /api/products/` - `Params: page|limit`
--   Product store - `POST /api/products/`
+-   Product store - `POST /api/products/` - `Content-type: application/json`
 -   Product show - `GET|HEAD /api/products/:id`
--   Product update - `PUT|PATCH /api/products/:id`
+-   Product update - `PUT|PATCH /api/products/:id` - `Content-type: application/json`
 -   Product destroy - `DELETE /api/products/:id`
-
-### Images
-
--   Images index - `GET|HEAD /api/products/` - `Params: page|limit`
--   Image upload - `POST /api/products/` - `Content-Type: multipart/form-data`
--   Image store - `POST /api/products/`
--   Image show - `GET|HEAD /api/products/:id`
--   Image update - `PUT|PATCH /api/products/:id`
--   Image destroy - `DELETE /api/products/:id`
 
 ### Other
 
 -   Version - `GET /api`
--   Page not found - `GET /api/404`
+-   File upload - `POST /api/files` - `Content-type: multipart/form-data`
+-   Page not found - `GET /404`
 
 ## Examples requests and responses
 

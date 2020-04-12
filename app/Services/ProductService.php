@@ -2,28 +2,30 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Product;
-use App\Services\ImageService;
+use App\Services\FileService;
 use App\Services\InterFaces\ProductServiceInterface;
-use App\Services\InterFaces\ImageServiceInterface;
+use App\Services\InterFaces\FileServiceInterface;
 
 class ProductService extends BaseService implements ProductServiceInterface {
     /**
-     * The folder to store the images to.
+     * The service used to manage files.
 	 * 
-	 * @var string
+	 * @var FileService
      */
-    const IMAGE_FOLDER_NAME = 'product-images';
+    private $fileService;
 	
     /**
-     * The service used to manage images.
-	 * 
-	 * @var ImageService
+     * Relationships to query.
+     * 
+     * @var array
      */
-    private $imageService;
+    protected $withRelationships = [
+		'productTranslations',
+		'productTags'
+	];
 
     /**
      * ProductService constructor.
@@ -31,31 +33,11 @@ class ProductService extends BaseService implements ProductServiceInterface {
      * @param Product $model
 	 * @return void
      */
-    public function __construct(Product $model, ImageServiceInterface $imageService) {
+    public function __construct(Product $model, FileServiceInterface $fileService) {
         parent::__construct($model);
 		
-        $this->imageService = $imageService;
-    }
-	
-    /**
-     * Get all instances.
-     * 
-     * @return Collection
-     */
-    public function all(): Collection {
-        return $this->model->with(['productTranslations', 'productTags'])->get();
-    }
-	
-    /**
-     * Find an instance by id.
-     * 
-     * @param int $id
-     * @return Model
-	 * 
-	 * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
-     */
-    public function find(int $id): Model {
-        return $this->model->with(['productTranslations', 'productTags'])->findOrFail($id);
+        $this->fileService = $fileService;
+        $this->bootRelationships();
     }
 	
     /**
@@ -65,15 +47,7 @@ class ProductService extends BaseService implements ProductServiceInterface {
      * @return Model
      */
     public function create(array $attributes): Model {
-        $product 	= $this->model->create($attributes);
-        $imagePath 	= $this->imageService->storeAs(
-			$attributes['image'],
-			$this->getImageFolder($product->id)
-		);
-		
-        $product->update([
-			'image_path' => $imagePath
-		]);
+        $product = $this->model->create($attributes);
 		
         $this->updateOrCreateTranslations($product, $attributes['product_translations']);
         $product->productTags()->attach($attributes['product_tag_ids']);
@@ -92,15 +66,6 @@ class ProductService extends BaseService implements ProductServiceInterface {
      */
     public function update(int $id, array $attributes): Model {
         $product = isset($attributes['product']) ? $attributes['product'] : $this->model->findOrFail($id);
-
-        if (isset($attributes['image'])) {
-            $imagePath = $this->imageService->replaceAs(
-    			$attributes['image'],
-    			$this->getImageFolder($product->id)
-    		);
-		
-            $attributes['image_path'] = $imagePath;
-        }
 
         $product->update($attributes);
 		
@@ -125,7 +90,6 @@ class ProductService extends BaseService implements ProductServiceInterface {
         $product = $this->model->find($id);
 		
         if ($product) {
-            $this->imageService->deleteDirectory($this->getImageFolder($product->id));
             $product->productTags()->detach();
             $product->productTranslations()->delete();
 			
@@ -136,22 +100,12 @@ class ProductService extends BaseService implements ProductServiceInterface {
     }
 	
     /**
-     * Delete the product images folder.
+     * Delete the product files folder.
      *
      * @return bool
      */
-    public function deleteAllImages(): bool {
-        return $this->imageService->deleteDirectory($this->getImageFolder());
-    }
-	
-    /**
-     * Get the full path of the current image folder
-     *  
-     * @param int $id
-     * @return string
-     */
-    private function getImageFolder(int $id = null): string {
-        return implode('/', ['images', self::IMAGE_FOLDER_NAME, $id]);
+    public function deleteAllFiles(): bool {
+        return $this->fileService->deleteDirectory('public/products');
     }
 	
     /**

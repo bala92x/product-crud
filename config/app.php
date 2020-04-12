@@ -235,9 +235,12 @@ return [
     |--------------------------------------------------------------------------
     */
 
-	'version'			=> '1.0.0',
-	'seeder_quantity' 	=> env('SEEDER_QUANTITY', 10),
-	'languages'			=> [
+	'version'				=> '1.0.0',
+	'seeder_quantity' 		=> env('SEEDER_QUANTITY', 10),
+	'modules'				=> [
+		'products'
+	],
+	'languages'				=> [
 
 		'hu_HU'	=> [
 			'name' 			=> 'magyar',
@@ -251,6 +254,6 @@ return [
 		]
 
 		],
-	'max_image_size'	=> env('MAX_IMAGE_SIZE', 10240), // KB
-	'max_text_length'	=> env('MAX_TEXT_LENGTH', 50000)
+	'upload_max_filesize'	=> env('UPLOAD_MAX_FILESIZE', 10240), // KB
+	'max_text_length'		=> env('MAX_TEXT_LENGTH', 50000)
 ];

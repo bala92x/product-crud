@@ -4,17 +4,25 @@ namespace Tests\Feature\ProductTests;
 
 use Illuminate\Support\Facades\Storage;
 
+use Tests\Feature\UploadsFile;
 use App\Http\Resources\ProductResources\ProductResource;
 
 class ProductStoreTest extends ProductTestCase {
+    use UploadsFile;
+
     /**
      * Test product store
      *
      * @return void
      */
     public function testStoreProduct(): void {
+        $initialProductCount = $this->productService->paginated(null, null)->count();
+        $this->assertEquals($initialProductCount, $this->productService->count());
+		
+        $this->fixtures['productStoreData']['imagePath'] = $this->uploadFile('products', 'image');
+
         $route 			= self::BASE_URL;
-        $response 		= $this->post($route, $this->fixtures['productStoreData']);
+        $response 		= $this->postJson($route, $this->fixtures['productStoreData']);
         $productId 		= json_decode($response->getContent())->data->id;
         $product		= $this->productService->find($productId);
         $expectedJson 	= json_encode(new ProductResource($product));
@@ -22,6 +30,9 @@ class ProductStoreTest extends ProductTestCase {
         $response->assertStatus(201)
 				->assertSee($expectedJson, $escaped = false);
         $this->assertDataSaved($product, $this->fixtures['productStoreData']);
+		
+        $this->assertEquals($this->productService->paginated(null, null)->count(), $initialProductCount + 1);
+        $this->assertEquals($this->productService->count(), $initialProductCount + 1);
 		
         Storage::disk('public')->assertExists($product->image_path);
     }
@@ -34,7 +45,7 @@ class ProductStoreTest extends ProductTestCase {
     public function testValidationErrors(): void {
         $initialProductCount 	= $this->productService->count();
         $route 					= self::BASE_URL;
-        $response 				= $this->post($route, $this->fixtures['productInvalidData']);
+        $response 				= $this->postJson($route, $this->fixtures['productInvalidData']);
         $expectedErrors			= json_encode([
 			'publishedUntil'				=> [
 				'The published until must be a date after published at.'
@@ -42,8 +53,8 @@ class ProductStoreTest extends ProductTestCase {
 			'price'							=> [
 				'The price must be an integer.'
 			],
-			'image'							=> [
-				'The image field is required when product id is not present.'
+			'imagePath'						=> [
+				'The file specified for image path does not exist.'
 			],
 			'productTranslations.1.slug'	=> [
 				'The product translation slug has already been taken.'
@@ -56,9 +67,5 @@ class ProductStoreTest extends ProductTestCase {
         $this->assertEquals($initialProductCount, $this->productService->count());
         $response->assertStatus(422)
 				->assertSee($expectedErrors, $ecaped = false);
-
-        $imageFolder = self::IMAGES_BASE_FOLDER . ($initialProductCount + 1);
-		
-        Storage::disk('public')->assertMissing($imageFolder);
     }
 }

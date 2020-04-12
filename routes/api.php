@@ -21,11 +21,4 @@ Route::get('/', function() {
 
 Route::apiResource('products', 'ProductController')->parameters(['products' => 'productId']);
 
-Route::apiResource('images', 'ImageController')->parameters(['images' => 'imageId']);
-Route::post('images/upload', 'ImageController@upload')->name('images.upload');
-
-Route::fallback(function() {
-    return response()->json([
-		'message' 	=> 'Page not found.',
-	], 404);
-})->name('404');
+Route::post('files', 'FileController@upload')->name('files.upload');

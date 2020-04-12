@@ -21,13 +21,13 @@ class ProductCache extends BaseCache implements ProductServiceInterface {
     }
 	
     /**
-     * Delete the product images folder.
+     * Delete the product files folder.
      *
      * @return bool
      */
-    public function deleteAllImages(): bool {
+    public function deleteAllFiles(): bool {
         Cache::flush();
 		
-        return $this->service->deleteAllImages();
+        return $this->service->deleteAllFiles();
     }
 }

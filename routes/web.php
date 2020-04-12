@@ -11,6 +11,12 @@
 |
 */
 
-Route::fallback(function() {
+Route::get('/', function() {
     return redirect()->route('version');
 })->name('index');
+
+Route::fallback(function() {
+    return response()->json([
+		'message' 	=> 'Page not found.',
+	], 404);
+})->name('404');
