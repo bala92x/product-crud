@@ -92,3 +92,9 @@ The DB schema plan can be found here: [https://dbdiagram.io/d/5d9c6358ff5115114d
 ```console
 composer test
 ```
+
+or
+
+```console
+php artisan test
+```
